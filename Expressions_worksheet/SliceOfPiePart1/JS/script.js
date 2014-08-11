@@ -12,8 +12,9 @@ var pizzasOrdered = prompt("This calculation will help determine exactly how man
 var partyGoers = prompt("How many partygoers are at this party?");   //Prompting the user to enter how many partygoers attended the party.
 
 var totalSlices = SLICES_PER_PIE * pizzasOrdered;   //Calculating the total amount of pizza slices available to distribute.
-var slicesPerPerson = totalSlices / partyGoers;
-var message =
+var slicesPerPerson = totalSlices / partyGoers;     //Calculating how many slices of pizza each person gets to eat
+
+var message = pizzasOrdered + " pizza pies were ordered for the party.\n" + partyGoers + " partygoers attended the party.\n\nEach person ate " + slicesPerPerson + " slices of pizza at the party.";    //Concatenating the resulting message to a string.
 
 console.log(message);   // Display the resulting message in the console.
-alert(message);   // Display the resulting message as an alert to the user.
+alert(message);         // Display the resulting message as an alert to the user.
