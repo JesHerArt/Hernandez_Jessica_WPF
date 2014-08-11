@@ -13,7 +13,7 @@ var partyGoers = prompt("How many partygoers attended the party?");   //Promptin
 
 var totalSlices = SLICES_PER_PIE * pizzasOrdered;   //Calculating the total amount of pizza slices available to distribute.
 var slicesPerPerson = parseInt(totalSlices / partyGoers);     //Calculating how many slices of pizza each person gets to eat.
-var sparkySlices = parseInt(totalSlices % partyGoers);
+var sparkySlices = totalSlices -   slicesPerPerson * partyGoers;     //Calculating how many slices of pizza Sparky gets to eat.
 
 var message = pizzasOrdered + " pizza pies were ordered for the party.\n" + partyGoers + " partygoers attended the party.\nEach person ate an equal amount of " + slicesPerPerson + " whole slice(s) of pizza at the party.\n\nSparky got to eat " + sparkySlices + " leftover slice(s) of pizza";    //Concatenating the resulting message to a string.
 
