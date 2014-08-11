@@ -5,11 +5,11 @@
  Problem: Average Shopping Bill
  */
 
-// REMINDER: ADD IN MY COMMENTS FOR EACH LINE
+// Calculate what is the average spending amount in groceries for the last five weeks. Use an array to store the data for each week.
 
 var grocerySpending = new Array(5);   //Creating the array to hold the grocery spending data for the last 5 weeks.
 
-grocerySpending[0] = prompt("");
+grocerySpending[0] = prompt("This calculation will help determine what is the total groceries spending amount in the last five weeks and give you  the average amount spent. \n\nEnter the amount spent on groceries in week 1.");
 grocerySpending[1] = prompt("Enter the amount spent on groceries in week 2.");  //Prompting the user to enter the amount of money spent on groceries on week 2.
 grocerySpending[2] = prompt("Enter the amount spent on groceries in week 3.");  //Prompting the user to enter the amount of money spent on groceries on week 3.
 grocerySpending[3] = prompt("Enter the amount spent on groceries in week 4.");  //Prompting the user to enter the amount of money spent on groceries on week 4.
