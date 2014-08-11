@@ -27,9 +27,9 @@ var salesTaxPercent = parseInt(salesTax) * 0.01;
 
 var itemWithDiscount = parseFloat(originalPrice) - parseFloat(originalPrice) * discountPercent;
 
-var itemWithTax = itemWithDiscount + itemWithDiscount * salesTaxPercent;
+var itemWithTax = Math.round( (itemWithDiscount + itemWithDiscount * salesTaxPercent) * 100) / 100 ;
 
-var itemWithNoTax = itemWithDiscount;
+var itemWithNoTax = Math.round(itemWithDiscount * 100) / 100;
 
 
 
