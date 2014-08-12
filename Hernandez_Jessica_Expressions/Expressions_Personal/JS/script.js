@@ -1,6 +1,7 @@
 /* Jessica J. Hernandez
  ID: 0004631401
  August 11, 2014
+ Week 2
  Expressions Assignment: Personal
  */
 
@@ -19,19 +20,15 @@ var minPayment = parseFloat( prompt("Enter the minimum payment amount you wish t
 
 
 //RESULT VARIABLES
-//accountBalance % minPayment == 0
-
-//accountBalance / minPayment
-
 var months = parseInt(accountBalance / minPayment);  //Calculate how many months it will take to pay off the pending balance.
 
-if (accountBalance % minPayment > 1)  //Created an if
-   { months += 1;}
+if (accountBalance % minPayment > 1)
+   { months += 1; }                    //Created an if statement because if the remainder of months is greater than 1, then we have to add one more month to months for complete liquidation of the pending balance.
 
 
 
 //RESULT TO PRINT
-var message = accountName + " Payment Calculator\nPending account balance: $" + accountBalance + "\n\nIf you pay a minimum of $" + minPayment + " per month to your " + accountName + " account, you will pay off your pending balance in " + months + " months.";
+var message = accountName + " Payment Calculator\nPending account balance: $" + accountBalance + "\n\nIf you pay a minimum of $" + minPayment + " per month to your " + accountName + " account, you will pay off your pending balance in " + months + " months.";   //Concatenating the resulting message to a string.
 
 console.log(message);   // Display the resulting message in the console.
 
