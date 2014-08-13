@@ -16,16 +16,33 @@ var pages = parseInt( prompt("How many pages does the website you created for yo
 
 var pagesData = new Array();
 
-var pageNum = 0;
-
 for ( k = 0; k < pages; k++ )
     {
-        pagesData = parseInt( prompt("How many kb is page #" + pageNum++ ) );
+        var pageNum = 0;
+        pagesData[k] = parseInt( prompt("How many kb is page #" + pageNum++ ) );
     }
+
+var DSL_STANDARD_KBPS = 3000;  //Constant variable for the standard DSL download speed in kb per second.
+
+var DIAL_UP_STANDARD_KBPS = 56;  //Constant variable for the standard Dial-up download speed in kb per second.
 
 
 
 //RESULT VARIABLES
+var pricePerPage = Math.round( (price/pages) * 100 ) / 100;
+
+var totalKb = 0;
+
+for ( k = 0; k < pages; k++ )
+    {
+        totalKb += pagesData[k];
+    }
+
+var avgKbPerPage = totalKb / pages;
+
+var dslLoad = avgKbPerPage / DSL_STANDARD_KBPS;
+
+var dialUpLoad = avgKbPerPage / DIAL_UP_STANDARD_KBPS;
 
 
 
