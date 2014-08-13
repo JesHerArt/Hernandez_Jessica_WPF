@@ -52,7 +52,7 @@ var dialUpLoad = avgKbPerPage / DIAL_UP_STANDARD_KBPS;  //Calculates the average
 
 
 //RESULT TO PRINT
-var message = "PRICE DETAILS:\nYou charged your client a $" + price + " fixed-price cost.\nYou earned an average of $" + pricePerPage + " per webpage you designed/developed for your clients' website.\n\n---------------------------------------\n\nWEBSITE DATA DETAILS:\n";  //Concatenating the resulting message to a string.
+var message = "PRICE DETAILS:\nYou charged your client a $" + price + " fixed-price cost.\nYou earned an average of $" + pricePerPage + " per webpage you designed/developed for your clients' website.\n\n---------------------------------------\n\nWEBSITE DATA DETAILS:\nThe standard average download speed for DSL is " + DSL_STANDARD_KBPS + "kbps.\nThe standard average download speed for Dial-up is " + DIAL_UP_STANDARD_KBPS + "kpbs.\n\nThe average time to load a page on your clients' website on a DSL broadband connection is " + dslLoad + " seconds.\nThe average time to load a page on your clients' website on a Dial-up broadband connection is " + dialUpLoad + " seconds.";  //Concatenating the resulting message to a string.
 
 console.log(message);   // Display the resulting message in the console.
 
