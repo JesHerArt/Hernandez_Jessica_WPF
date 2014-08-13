@@ -9,6 +9,7 @@
 alert( "OVERVIEW:\n\nFor each client you make a website for, you charge a fixed-price. You want to calculate how much your earning for each web page you designed/developed based on the fixed-price you charged the client. This will give you an estimate as to how much you're charging per page in your fixed-price amount.\n\nBefore you turn in the finalized project files to the client and upload them to the server hosting their website, you also want to make sure your average download speeds for the websites' pages are decent for both DSL and Dial-up broadband visitors on the site." );  //Alert that prompts the user with an overview of what this program will do and what it will help calculate.
 
 
+
 //GIVENS
 var price = parseFloat( prompt("How much did you charge your client?\n** Do not enter the '$' sign, just the price. **") );  //Prompts the user to enter the price they charged the client to do their website.
 
@@ -32,20 +33,20 @@ var DIAL_UP_STANDARD_KBPS = 56;  //Constant variable for the standard Dial-up do
 
 
 //RESULT VARIABLES
-var pricePerPage = Math.round( (price/pages) * 100 ) / 100;
+var pricePerPage = Math.round( (price/pages) * 100 ) / 100;  //Calculates the average price per page based on the fixed-price that was charged to the client.
 
-var totalKb = 0;
+var totalKb = 0;  //Declare and subtly define the variable to then use in the for-loop to define the total kb all together for the entire website.
 
-for ( k = 0; k < pages; k++ )
+for ( k = 0; k < pages; k++ )  //This for-loop will fully define the totalKb variable by adding the kb of all the pages of the website that was added in the array by the user when they were prompted to enter the information before.
     {
-        totalKb += pagesData[k];
+        totalKb += pagesData[k];  //The totalKb variable uses the += operator to continue adding the next kb amount to the previous sum.
     }
 
-var avgKbPerPage = totalKb / pages;
+var avgKbPerPage = totalKb / pages;  //Calculates the average kb per page by dividing the total kb amount for the entire website by the total number of web pages the site has.
 
-var dslLoad = avgKbPerPage / DSL_STANDARD_KBPS;
+var dslLoad = avgKbPerPage / DSL_STANDARD_KBPS;  //Calculates the average DSL download time by diving the average kb per page by the standard average of kbps download speed DSL is known to have.
 
-var dialUpLoad = avgKbPerPage / DIAL_UP_STANDARD_KBPS;
+var dialUpLoad = avgKbPerPage / DIAL_UP_STANDARD_KBPS;  //Calculates the average Dial-up download time by diving the average kb per page by the standard average of kbps download speed Dial-up is known to have.
 
 
 
