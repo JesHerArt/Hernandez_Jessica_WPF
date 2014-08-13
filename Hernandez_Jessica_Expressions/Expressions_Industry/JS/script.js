@@ -51,7 +51,7 @@ var dialUpLoad = avgKbPerPage / DIAL_UP_STANDARD_KBPS;  //Calculates the average
 
 
 //RESULT TO PRINT
-var message = "";  //Concatenating the resulting message to a string.
+var message = "PRICE DETAILS:\nYou charged your client a $" + price + " fixed-price cost.\nYou earned an average of $" + pricePerPage + " per webpage you designed/developed for your clients' website.\n\n---------------------------------------\n\nWEBSITE DATA DETAILS:\n";  //Concatenating the resulting message to a string.
 
 console.log(message);   // Display the resulting message in the console.
 
