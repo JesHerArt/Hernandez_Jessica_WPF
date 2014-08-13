@@ -17,10 +17,11 @@ var pages = parseInt( prompt("How many pages does the website you created for yo
 
 var pagesData = new Array();  //Declare the array needed to store the information for the givens the user will be prompted to input.
 
+var pageNum = 1;  //Variable created for the sake of displaying page #'s in the prompt of the for-loop.
+
 for ( k = 0; k < pages; k++ )  //This for-loop will define the the pagesData array by prompting the user to enter how much kb is each page of the website depending on how many web pages the user previously said they had created.
     {
-        var pageNum = 0;  //Variable created in the for-loop for the sake of displaying page #'s in the prompt.
-        pagesData[k] = parseInt( prompt("How many kb is page #" + pageNum++ ) );
+        pagesData[k] = parseInt( prompt("How many kb is page #" + (pageNum++) ) );
     }
 
 
