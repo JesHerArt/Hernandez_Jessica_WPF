@@ -6,7 +6,7 @@
  */
 
 //OVERVIEW:
-
+alert( "OVERVIEW:\n\nFor each client you make a website for, you charge a fixed-price. You want to calculate how much your earning for each web page you designed/developed based on the fixed-price you charged the client. This will give you an estimate as to how much you're charging per page in your fixed-price amount.\n\nBefore you turn in the finalized project files to the client and upload them to the server hosting their website, you also want to make sure your average download speeds for the websites' pages are decent for both DSL and Dial-up broadband visitors on the site." );  //Alert that prompts the user with an overview of what this program will do and what it will help calculate.
 
 
 //GIVENS
