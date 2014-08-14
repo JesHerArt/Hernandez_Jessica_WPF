@@ -70,9 +70,9 @@ while (placeOrderResult)
 {
     var steps = 1;
 
-    pizza = parseInt( prompt("STEP " + (steps++) + ":\n\nHow many pizza pies would you like to order?") );
+    pizza = parseInt( prompt("STEP " + (steps++) + ": PIZZA\n\nHow many pizza pies would you like to order?") );
 
-    var pizzaMenu = parseInt( prompt("STEP " + (steps++) + ":\n\nWhat size pizza would you like to order?\n\n1 - Medium  @ $8.00/pie\n2 - Large      @ $10.00/pie\n3 - Jumbo    @ $14.00/pie\n\n" + inputMessage ) );
+    var pizzaMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA SIZE\n\nWhat size pizza would you like to order?\n\n1 - Medium  @ $8.00/pie\n2 - Large      @ $10.00/pie\n3 - Jumbo    @ $14.00/pie\n\n" + inputMessage ) );
 
     if ( pizzaMenu == 1 )
     {
@@ -95,7 +95,7 @@ while (placeOrderResult)
     subTotal = parseFloat(  Math.round( (pizzaSizePrice * pizza) * 100 ) / 100 );
 
 
-    var toppingMenu = parseInt( prompt("STEP " + (steps++) + ":\nSub total: $" + subTotal + ".00\n\nWhich topping would you like to add to your " + pizza + " pizza(s)?\n\n1 - Pepperoni ..................... (+$1.50)\n2 - Ham & Pineapple .......... (+$2.50)\n3 - Sausage ....................... (+$1.50)\n4 - Extra Cheese ................ (+$0.75)\n5 - No Extra Topping ......... (+$0.00)\n\n" + inputMessage ) );
+    var toppingMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA TOPPINGS\nSub total: $" + subTotal.toFixed(2) + "\n\nWhich topping would you like to add to your " + pizza + " pizza(s)?\n\n1 - Pepperoni ..................... (+$1.50)\n2 - Ham & Pineapple .......... (+$2.50)\n3 - Sausage ....................... (+$1.50)\n4 - Extra Cheese ................ (+$0.75)\n5 - No Extra Topping ......... (+$0.00)\n\n" + inputMessage ) );
 
     if ( toppingMenu == 1 )
     {
@@ -128,6 +128,35 @@ while (placeOrderResult)
     }
 
     subTotal += toppingPrice;
+
+
+    var beverageMenu = parseInt( prompt("STEP " + (steps++) + ": BEVERAGES\nSub total: $" + subTotal.toFixed(2) + "\n\nWhat beverage would you like to add to your order?\nEach beverage is a standard 2L bottle at a price of $1.25.\n\n1 - Cola Cola\n2 - Sprite\n3 - Fanta\n4 - No Beverage\n\n" + inputMessage ) );
+
+    if ( beverageMenu == 1 )
+    {
+        beverageName = "Cola Cola (2L Bottle)";
+        beveragePrice = 1.25;
+    }
+
+    if ( beverageMenu == 2 )
+    {
+        beverageName = "Sprite (2L Bottle)";
+        beveragePrice = 1.25;
+    }
+
+    if ( beverageMenu == 3 )
+    {
+        beverageName = "Fanta (2L Bottle)";
+        beveragePrice = 1.25;
+    }
+
+    if ( beverageMenu == 4 )
+    {
+        beverageName = "No";
+        beveragePrice = 0.00;
+    }
+
+    subTotal += beveragePrice;
 
 
 
