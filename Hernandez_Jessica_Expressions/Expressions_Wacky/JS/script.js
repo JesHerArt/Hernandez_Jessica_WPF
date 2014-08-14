@@ -42,7 +42,7 @@ var cityStateZip;
 
 var tipAmount;
 
-var deliveryPrice;
+var DELIVERY_PRICE = 3.25;
 
 var subTotal;
 
@@ -182,7 +182,32 @@ while (placeOrderResult)
     subTotal += dessertPrice;
 
 
+    alert("Almost done taking your order, just a few more prompts.");
 
+
+    var customerName = prompt("STEP " + (steps++) + ": CUSTOMER INFORMATION\n\nWhat is your name?");
+
+    var phoneNum = prompt("STEP " + steps + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input a contact phone number.\n(Ex: (xxx) xxx-xxxx )");
+
+    var streetAddress = prompt("STEP " + steps + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input your street address of your delivery; include your apartment number if applicable.\n(Ex: 12345 N.W. 77 Street, Apt# 202 )");
+
+    var cityStateZip = prompt("STEP " + steps + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input your city, state and zip-code of your delivery.\n(Ex: Miami, FL 33131 )");
+
+
+
+    var tip = parseInt( prompt("STEP " + (steps++) + ": DRIVER TIP\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to give a tip to the driver?\n\n1 - Yes\n2 - No\n\n" + inputMessage ) );
+
+    if ( tip == 1 )
+    {
+        tipAmount = parseFloat( prompt("How much tip would you like to give the driver?\n\n** Do not include the '$' sign, just the amount. **") );
+    }
+
+    if ( tip = 2 )
+    {
+        tipAmount = 0.00;
+    }
+
+    subTotal += tipAmount;
 
 
     message = "testing";
