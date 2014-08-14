@@ -70,9 +70,9 @@ while (placeOrderResult)
 {
     var steps = 1;
 
-    pizza = parseInt( prompt("How many pizza pies would you like to order?") );
+    pizza = parseInt( prompt("STEP " + (steps++) + ":\n\nHow many pizza pies would you like to order?") );
 
-    var pizzaMenu = parseInt( prompt("STEP " + (steps++) +":\n\nWhat size pizza would you like to order?\n\n1 - Medium @ $8.00/pie\n2 - Large @ $10.00/pie\n3- Jumbo @ $14.00/pie\n\n" + inputMessage ) );
+    var pizzaMenu = parseInt( prompt("STEP " + (steps++) + ":\n\nWhat size pizza would you like to order?\n\n1 - Medium  @ $8.00/pie\n2 - Large      @ $10.00/pie\n3 - Jumbo    @ $14.00/pie\n\n" + inputMessage ) );
 
     if ( pizzaMenu == 1 )
     {
@@ -92,9 +92,48 @@ while (placeOrderResult)
         pizzaSizePrice = 14.00;
     }
 
-    subTotal = pizzaSizePrice * pizza;
+    subTotal = parseFloat(  Math.round( (pizzaSizePrice * pizza) * 100 ) / 100 );
 
-    
+
+    var toppingMenu = parseInt( prompt("STEP " + (steps++) + ":\nSub total: $" + subTotal + ".00\n\nWhich topping would you like to add to your " + pizza + " pizza(s)?\n\n1 - Pepperoni ..................... (+$1.50)\n2 - Ham & Pineapple .......... (+$2.50)\n3 - Sausage ....................... (+$1.50)\n4 - Extra Cheese ................ (+$0.75)\n5 - No Extra Topping ......... (+$0.00)\n\n" + inputMessage ) );
+
+    if ( toppingMenu == 1 )
+    {
+        toppingName = "Pepperoni";
+        toppingPrice = 1.50;
+    }
+
+    if ( toppingMenu == 2 )
+    {
+        toppingName = "Ham & Pineapple";
+        toppingPrice = 2.50;
+    }
+
+    if ( toppingMenu == 3 )
+    {
+        toppingName = "Sausage";
+        toppingPrice = 1.50;
+    }
+
+    if ( toppingMenu == 4 )
+    {
+        toppingName = "Extra Cheese";
+        toppingPrice = 0.75;
+    }
+
+    if ( toppingMenu == 5 )
+    {
+        toppingName = "No";
+        toppingPrice = 0.00;
+    }
+
+    subTotal += toppingPrice;
+
+
+
+
+    message = "testing";
+    placeOrderResult = false;
 
 }
 
