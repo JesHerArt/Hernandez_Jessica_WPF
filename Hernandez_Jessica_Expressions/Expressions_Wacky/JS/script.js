@@ -159,6 +159,30 @@ while (placeOrderResult)
     subTotal += beveragePrice;
 
 
+    var dessertMenu = parseInt( prompt("STEP " + (steps++) + ": DESSERTS\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to include any of our dessert options to your order?\n\n1 - Cinnamon Bites .............. (+$3.00)\n2 - Chocolate Cake(x2) ........ (+$5.00)\n3 - No Dessert ..................... (+$0.00)\n\n" + inputMessage ) );
+
+    if ( dessertMenu == 1 )
+    {
+        dessertName = "Cinnamon Bites";
+        dessertPrice = 3.00;
+    }
+
+    if ( dessertMenu == 2 )
+    {
+        dessertName = "Chocolate Cake(x2)";
+        dessertPrice = 5.00;
+    }
+
+    if ( dessertMenu == 3 )
+    {
+        dessertName = "No";
+        dessertPrice = 0.00;
+    }
+
+    subTotal += dessertPrice;
+
+
+
 
 
     message = "testing";
