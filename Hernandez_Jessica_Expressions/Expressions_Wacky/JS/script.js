@@ -55,24 +55,48 @@ var orderTotal;
 var placeOrder = parseInt( prompt( "Thank you for visiting Pizza Script!\nAt the moment our site is experiencing some technical difficulties, BUT we will still be able to take your order. In order to do so, you will be prompted with a series of dialog boxes requesting your specified input for your order.\n\nWe cannot accept credit cards through this interface, but we will be able to give you a full order price estimate before you actually submit your order. This will allow you time to verify if you have the sufficient funds in cash to therefore place your order.\n\n\nWould you like to place an order?\n\n1 - Yes\n2 - No\n\n" + inputMessage ) );
 
 if ( placeOrder == 1 )
-    {
-        placeOrderResult = true;
-    }
+{
+    placeOrderResult = true;
+}
 
 if ( placeOrder == 2 )
-    {
-        placeOrderResult = false;
-        message = "Thank you for visiting Pizza Script; sorry our site wasn't completely functional at the moment.\n\nHave a nice day!";
-    }
+{
+    placeOrderResult = false;
+    message = "Thank you for visiting Pizza Script; sorry our site wasn't completely functional at the moment.\n\nHave a nice day!";
+}
+
 
 while (placeOrderResult)
+{
+    var steps = 1;
+
+    pizza = parseInt( prompt("How many pizza pies would you like to order?") );
+
+    var pizzaMenu = parseInt( prompt("STEP " + (steps++) +":\n\nWhat size pizza would you like to order?\n\n1 - Medium @ $8.00/pie\n2 - Large @ $10.00/pie\n3- Jumbo @ $14.00/pie\n\n" + inputMessage ) );
+
+    if ( pizzaMenu == 1 )
     {
-        var steps = 1;
-
-
-
-
+        pizzaSize = "Medium";
+        pizzaSizePrice = 8.00;
     }
+
+    if ( pizzaMenu == 2 )
+    {
+        pizzaSize = "Large";
+        pizzaSizePrice = 10.00;
+    }
+
+    if ( pizzaMenu == 3 )
+    {
+        pizzaSize = "Jumbo";
+        pizzaSizePrice = 14.00;
+    }
+
+    subTotal = pizzaSizePrice * pizza;
+
+    
+
+}
 
 
 
