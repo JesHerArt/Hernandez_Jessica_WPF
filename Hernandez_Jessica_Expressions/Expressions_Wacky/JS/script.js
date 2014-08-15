@@ -8,12 +8,14 @@
 
 //OVERVIEW: You want to order pizza for dinner, but the "Pizza Script" website is currently malfunctioning. The site instead prompts you with dialogs and input boxes to still be able to take your order online and give you a checkout total price at the end before you submit your order.
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //CONSTANTS
-var INPUT_MESSAGE = "** Please input the corresponding number that indicates your choice.  **"  //This message will be displayed in most prompt messages that require the customer to input a corresponding value to which item they want to choose.
+var INPUT_MESSAGE = "** Please input the corresponding number that indicates your choice.  **";  //This message will be displayed in most prompt messages that require the customer to input a corresponding value to which item they want to choose.
 
 var DELIVERY_PRICE = 3.25;  //This is the standard delivery charge.
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //VARIABLES TO DECLARE: These variables will be defined and used in the while-loop to then be displayed in the final result. Most of the variables have been declared outside of the while-loop.
 var placeOrderResult;  //This variable will be used as a boolean value to enter and exit the while-loop.
@@ -52,52 +54,61 @@ var subTotal;  //This variable will be defined with increasing sub total of the 
 
 var orderReview;  //This variable will be defined with final result of the pizza order. This will be a concatenated message that includes the calculated variables with the order items and prices. This will include the sub total, delivery charge, tip amount and order total at the end of the concatenated message.
 
-var orderTotal;  //This variable will be defined with the resulting order total of all the items the user ordered(subTotal) and includes the delivery charge and tip amount. 
+var orderTotal;  //This variable will be defined with the resulting order total of all the items the user ordered(subTotal) and includes the delivery charge and tip amount.
 
-var placeOrder = parseInt( prompt( "Thank you for visiting Pizza Script!\nAt the moment our site is experiencing some technical difficulties, BUT we will still be able to take your order. In order to do so, you will be prompted with a series of dialog boxes requesting your specified input for your order.\n\nWe cannot accept credit cards through this interface, but we will be able to give you a full order price estimate before you actually submit your order. This will allow you time to verify if you have the sufficient funds in cash to therefore place your order.\n\n\nWould you like to place an order?\n\n1 - Yes\n2 - No\n\n" + INPUT_MESSAGE ) );
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-if ( placeOrder == 1 )
+//OVERVIEW MESSAGE FOR THE CUSTOMER
+var placeOrder = parseInt( prompt( "Thank you for visiting Pizza Script!\nAt the moment our site is experiencing some technical difficulties, BUT we will still be able to take your order. In order to do so, you will be prompted with a series of dialog boxes requesting your specified input for your order.\n\nWe cannot accept credit cards through this interface, but we will be able to give you a full order price estimate before you actually submit your order. This will allow you time to verify if you have the sufficient funds in cash to therefore place your order.\n\n\nWould you like to place an order?\n\n1 - Yes\n2 - No\n\n" + INPUT_MESSAGE ) );  //This will prompt the user that the Pizza Script website is experiencing technical difficulties but with a series of prompt messages the customer will still be able to place their online order with them. It would require the user to input a number that corresponds to either yes or no to the question if they want to place an order.
+
+if ( placeOrder == 1 )  //This condition verifies that if the customer input the number 1 for yes to place an order, it will then make the placeOrderResult variable true which allows the order process to begin with the while-loop.
 {
-    placeOrderResult = true;
+    placeOrderResult = true;  //This variable will initiate the while-loop.
 }
 
-if ( placeOrder == 2 )
+if ( placeOrder == 2 )  //This condition verifies that if the customer input the number 2 for no to place an order, it will therefore not execute the while-loop.
 {
-    placeOrderResult = false;
-    message = "Thank you for visiting Pizza Script; sorry our site wasn't completely functional at the moment.\n\nHave a nice day!";
+    placeOrderResult = false;  //This variable is equal to false to the while-loop will not execute.
+    message = "Thank you for visiting Pizza Script; sorry our site wasn't completely functional at the moment.\n\nHave a nice day!";  //The variable message is then defined to display a message to the customer thanking them for visiting the site.
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-while (placeOrderResult)
+//THE WHILE-LOOP WILL KEEP THE ORDER PROCESS GOING UNTIL THE placeOrderResult VARIABLE IS FALSE WHICH THEN EXITS THE WHILE-LOOP.
+while (placeOrderResult)  //The while-loop begins here and goes through as long as the placeOrderResult variable is true.
 {
-    var steps = 1;
+    var steps = 1;  //This variable is meant to display the step number at the top of the prompt messages to the customer.
 
-    pizza = parseInt( prompt("STEP " + (steps++) + ": PIZZA\n\nHow many pizza pies would you like to order?") );
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    var pizzaMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA SIZE\n\nWhat size pizza would you like to order?\n\n1 - Medium  @ $8.00/pie\n2 - Large      @ $10.00/pie\n3 - Jumbo    @ $14.00/pie\n\n" + INPUT_MESSAGE ) );
+    //STEP 1: PIZZA MENU
+    pizza = parseInt( prompt("STEP " + (steps++) + ": PIZZA\n\nHow many pizza pies would you like to order?") );  //This variable gets defined to the number of pizzas the customer wants to order.
 
-    if ( pizzaMenu == 1 )
+    var pizzaMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA SIZE\n\nWhat size pizza would you like to order?\n\n1 - Medium  @ $8.00/pie\n2 - Large      @ $10.00/pie\n3 - Jumbo    @ $14.00/pie\n\n" + INPUT_MESSAGE ) );  //This variable gets defined the the corresponding number of the item they choose from the pizza size menu.
+
+    if ( pizzaMenu == 1 )  //This condition verifies that if the customer input the number 1 for a medium pizza
     {
-        pizzaSize = "Medium";
-        pizzaSizePrice = 8.00;
+        pizzaSize = "Medium"; //This variable gets defined to medium since the condition is truly equal to menu choice 1
+        pizzaSizePrice = 8.00;  //This variable gets defined to the price of the medium pizza since the condition is equal to menu choice 1
     }
 
-    if ( pizzaMenu == 2 )
+    if ( pizzaMenu == 2 )  //This condition verifies that if the customer input the number 2 for a large pizza
     {
-        pizzaSize = "Large";
-        pizzaSizePrice = 10.00;
+        pizzaSize = "Large";  //This variable gets defined to large since the condition is truly equal to menu choice 2
+        pizzaSizePrice = 10.00;  //This variable gets defined to the price of the large pizza since the condition is equal to menu choice 2
     }
 
-    if ( pizzaMenu == 3 )
+    if ( pizzaMenu == 3 )  //This condition verifies that if the customer input the number 3 for a jumbo pizza
     {
-        pizzaSize = "Jumbo";
-        pizzaSizePrice = 14.00;
+        pizzaSize = "Jumbo";  //This variable gets defined to jumbo since the condition is truly equal to menu choice 3
+        pizzaSizePrice = 14.00;  //This variable gets defined to the price of the jumbo pizza since the condition is equal to menu choice 3
     }
 
-    subTotal = parseFloat(  Math.round( (pizzaSizePrice * pizza) * 100 ) / 100 );
+    subTotal = parseFloat(  Math.round( (pizzaSizePrice * pizza) * 100 ) / 100 );  //This variable gets defined to the sub total price of the number of pizzas times the price of the pizza size the customer order.
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    var toppingMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA TOPPINGS\nSub total: $" + subTotal.toFixed(2) + "\n\nWhich topping would you like to add to your " + pizza + " pizza(s)?\n\n1 - Pepperoni ..................... (+$1.50)\n2 - Ham & Pineapple .......... (+$2.50)\n3 - Sausage ....................... (+$1.50)\n4 - Extra Cheese ................ (+$0.75)\n5 - No Extra Topping ......... (+$0.00)\n\n" + INPUT_MESSAGE ) );
+    //STEP 2: TOPPINGS MENU
+    var toppingMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA TOPPINGS\nSub total: $" + subTotal.toFixed(2) + "\n\nWhich topping would you like to add to your " + pizza + " pizza(s)?\n\n1 - Pepperoni ..................... (+$1.50)\n2 - Ham & Pineapple .......... (+$2.50)\n3 - Sausage ....................... (+$1.50)\n4 - Extra Cheese ................ (+$0.75)\n5 - No Extra Topping ......... (+$0.00)\n\n" + INPUT_MESSAGE ) );  //This variable gets defined the the corresponding number of the item they choose from the pizza size menu.
 
     if ( toppingMenu == 1 )
     {
@@ -131,8 +142,10 @@ while (placeOrderResult)
 
     subTotal += toppingPrice;
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    var beverageMenu = parseInt( prompt("STEP " + (steps++) + ": BEVERAGES\nSub total: $" + subTotal.toFixed(2) + "\n\nWhat beverage would you like to add to your order?\nEach beverage is a standard 2L bottle at a price of $1.25.\n\n1 - Cola Cola\n2 - Sprite\n3 - Fanta\n4 - No Beverage\n\n" + INPUT_MESSAGE ) );
+    //STEP 3: BEVERAGE MENU
+    var beverageMenu = parseInt( prompt("STEP " + (steps++) + ": BEVERAGES\nSub total: $" + subTotal.toFixed(2) + "\n\nWhat beverage would you like to add to your order?\nEach beverage is a standard 2L bottle at a price of $1.25.\n\n1 - Cola Cola\n2 - Sprite\n3 - Fanta\n4 - No Beverage\n\n" + INPUT_MESSAGE ) );  //This variable gets defined the the corresponding number of the item they choose from the pizza size menu.
 
     if ( beverageMenu == 1 )
     {
@@ -160,8 +173,10 @@ while (placeOrderResult)
 
     subTotal += beveragePrice;
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    var dessertMenu = parseInt( prompt("STEP " + (steps++) + ": DESSERTS\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to include any of our dessert options to your order?\n\n1 - Cinnamon Bites .............. (+$3.00)\n2 - Chocolate Cake(x2) ........ (+$5.00)\n3 - No Dessert ..................... (+$0.00)\n\n" + INPUT_MESSAGE ) );
+    //STEP 4: DESSERT MENU
+    var dessertMenu = parseInt( prompt("STEP " + (steps++) + ": DESSERTS\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to include any of our dessert options to your order?\n\n1 - Cinnamon Bites .............. (+$3.00)\n2 - Chocolate Cake(x2) ........ (+$5.00)\n3 - No Dessert ..................... (+$0.00)\n\n" + INPUT_MESSAGE ) );  //This variable gets defined the the corresponding number of the item they choose from the pizza size menu.
 
     if ( dessertMenu == 1 )
     {
@@ -183,10 +198,13 @@ while (placeOrderResult)
 
     subTotal += dessertPrice;
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    console.log("Almost done taking your order, just a few more prompts.");
-    alert("Almost done taking your order, just a few more prompts.");
+    //MESSAGE TO LET THE CUSTOMER KNOW THE ORDER PLACEMENT PROCESS IS ALMOST DONE
+    console.log("Almost done taking your order, just a few more prompts.");  //Outputs a message to the console.
+    alert("Almost done taking your order, just a few more prompts.");  //Outputs the message in an alert box to the customer.
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     customerName = prompt("STEP " + steps + ": CUSTOMER INFORMATION\n\nWhat is your name?");
 
@@ -196,9 +214,9 @@ while (placeOrderResult)
 
     cityStateZip = prompt("STEP " + (steps++) + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input your city, state and zip-code of your delivery.\n(Ex: Miami, FL 33131 )");
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-    var tip = parseInt( prompt("STEP " + steps + ": DRIVER TIP\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to give a tip to the driver?\n\n1 - Yes\n2 - No\n\n" + INPUT_MESSAGE ) );
+    var tip = parseInt( prompt("STEP " + steps + ": DRIVER TIP\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to give a tip to the driver?\n\n1 - Yes\n2 - No\n\n" + INPUT_MESSAGE ) );  //This variable gets defined the the corresponding number of the customers decision to give the driver a tip or not.
 
     if ( tip == 1 )
     {
@@ -212,9 +230,11 @@ while (placeOrderResult)
 
     subTotal += tipAmount;
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     orderTotal = subTotal + DELIVERY_PRICE;
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     orderReview = "ORDER REVIEW:\n** Please review your order carefully before submitting on the following prompt screen. **\n\nPIZZA:\n" + pizza + " " + pizzaSize + " Pizza(s) @ $" + pizzaSizePrice.toFixed(2) + " each.\nWith " + toppingName + " topping @ $" + toppingPrice.toFixed(2) + ".\n\nBEVERAGE:\n" + beverageName + " @ $" + beveragePrice.toFixed(2) + ".\n\nDESSERT:\n" + dessertName + " dessert @ $" + dessertPrice.toFixed(2) + ".\n\nCUSTOMER DETAILS:\nThis order will be delivered to: " + customerName + "\nTo the address:\n" + streetAddress + " " + cityStateZip + "\nContact Phone #: " + phoneNum + "\n\nSub Total: ........................... $" + subTotal.toFixed(2) + "\nDelivery Charge: ................. $" + DELIVERY_PRICE + "\nTip Amount: ....................... $" + tipAmount.toFixed(2) + "\n\nORDER TOTAL: .................... $" + orderTotal.toFixed(2) + "\n\n** Please remember this will be a cash on delivery order. **";
 
@@ -222,6 +242,7 @@ while (placeOrderResult)
     console.log("\n\n" + orderReview);
     alert(orderReview);
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     var submitOrder = parseInt( prompt("Would you like to submit your pizza order?\nOrder Total: $" + orderTotal.toFixed(2) + "\n\n1 - Yes\n2 - No\n\n" + INPUT_MESSAGE) );
 
@@ -235,6 +256,7 @@ while (placeOrderResult)
         message = "Your order has been removed from queue.\n\nThank you for visiting Pizza Scrip!\nHave a nice day!";
     }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     placeOrderResult = false;
 }
