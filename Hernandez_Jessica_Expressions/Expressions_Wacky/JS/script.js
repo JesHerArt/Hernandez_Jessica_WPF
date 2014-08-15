@@ -8,49 +8,53 @@
 
 //OVERVIEW: You want to order pizza for dinner, but the "Pizza Script" website is currently malfunctioning. The site instead prompts you with dialogs and input boxes to still be able to take your order online and give you a checkout total price at the end before you submit your order.
 
-var inputMessage = "** Please input the corresponding number that indicates your choice.  **"
 
-var placeOrderResult;
+//CONSTANTS
+var INPUT_MESSAGE = "** Please input the corresponding number that indicates your choice.  **"  //This message will be displayed in most prompt messages that require the customer to input a corresponding value to which item they want to choose.
 
-var message;
+var DELIVERY_PRICE = 3.25;  //This is the standard delivery charge.
 
-var pizza;
 
-var pizzaSize;
+//VARIABLES TO DECLARE: These variables will be defined and used in the while-loop to then be displayed in the final result. Most of the variables have been declared outside of the while-loop.
+var placeOrderResult;  //This variable will be used as a boolean value to enter and exit the while-loop.
 
-var pizzaSizePrice;
+var message;   //This variable will be defined with a specific message depending on the customers order submission approval or decline.
 
-var toppingName;
+var pizza;  //This variable will be defined with the number of pizzas the customer wants to order.
 
-var toppingPrice;
+var pizzaSize;  //This variable will be defined with the size of pizzas the customer wants to order.
 
-var beverageName;
+var pizzaSizePrice;  //This variable will be defined with the price of the pizzas depending on the pizzaSize the customer orders.
 
-var beveragePrice;
+var toppingName;  //This variable will be defined with the name of the topping the customer choose to add to their pizza.
 
-var dessertName;
+var toppingPrice;  //This variable will be defined with the price of the topping the customer chooses.
 
-var dessertPrice;
+var beverageName;  //This variable will be defined with the name of the beverage the customer decides to add to their order.
 
-var customerName;
+var beveragePrice;  //This variable will be defined with the price of the beverage the customer chooses.
 
-var phoneNum;
+var dessertName;  //This variable will be defined with the name of the dessert the customer decides to add to their order.
 
-var streetAddress;
+var dessertPrice;  //This variable will be defined with the price of the dessert the customer chooses.
 
-var cityStateZip;
+var customerName;  //This variable will be defined with the customers name that's placing the order.
 
-var tipAmount;
+var phoneNum;  //This variable will be defined with the customers contact phone number.
 
-var DELIVERY_PRICE = 3.25;
+var streetAddress;  //This variable will be defined with the customers delivery street address.
 
-var subTotal;
+var cityStateZip;  //This variable will be defined with the customers city, state and zip-code portion of their delivery address.
 
-var orderReview;
+var tipAmount;  //This variable will be defined with the tip amount the customer decides to give the driver.
 
-var orderTotal;
+var subTotal;  //This variable will be defined with increasing sub total of the order.
 
-var placeOrder = parseInt( prompt( "Thank you for visiting Pizza Script!\nAt the moment our site is experiencing some technical difficulties, BUT we will still be able to take your order. In order to do so, you will be prompted with a series of dialog boxes requesting your specified input for your order.\n\nWe cannot accept credit cards through this interface, but we will be able to give you a full order price estimate before you actually submit your order. This will allow you time to verify if you have the sufficient funds in cash to therefore place your order.\n\n\nWould you like to place an order?\n\n1 - Yes\n2 - No\n\n" + inputMessage ) );
+var orderReview;  //This variable will be defined with final result of the pizza order. This will be a concatenated message that includes the calculated variables with the order items and prices. This will include the sub total, delivery charge, tip amount and order total at the end of the concatenated message.
+
+var orderTotal;  //This variable will be defined with the resulting order total of all the items the user ordered(subTotal) and includes the delivery charge and tip amount. 
+
+var placeOrder = parseInt( prompt( "Thank you for visiting Pizza Script!\nAt the moment our site is experiencing some technical difficulties, BUT we will still be able to take your order. In order to do so, you will be prompted with a series of dialog boxes requesting your specified input for your order.\n\nWe cannot accept credit cards through this interface, but we will be able to give you a full order price estimate before you actually submit your order. This will allow you time to verify if you have the sufficient funds in cash to therefore place your order.\n\n\nWould you like to place an order?\n\n1 - Yes\n2 - No\n\n" + INPUT_MESSAGE ) );
 
 if ( placeOrder == 1 )
 {
@@ -70,7 +74,7 @@ while (placeOrderResult)
 
     pizza = parseInt( prompt("STEP " + (steps++) + ": PIZZA\n\nHow many pizza pies would you like to order?") );
 
-    var pizzaMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA SIZE\n\nWhat size pizza would you like to order?\n\n1 - Medium  @ $8.00/pie\n2 - Large      @ $10.00/pie\n3 - Jumbo    @ $14.00/pie\n\n" + inputMessage ) );
+    var pizzaMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA SIZE\n\nWhat size pizza would you like to order?\n\n1 - Medium  @ $8.00/pie\n2 - Large      @ $10.00/pie\n3 - Jumbo    @ $14.00/pie\n\n" + INPUT_MESSAGE ) );
 
     if ( pizzaMenu == 1 )
     {
@@ -93,7 +97,7 @@ while (placeOrderResult)
     subTotal = parseFloat(  Math.round( (pizzaSizePrice * pizza) * 100 ) / 100 );
 
 
-    var toppingMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA TOPPINGS\nSub total: $" + subTotal.toFixed(2) + "\n\nWhich topping would you like to add to your " + pizza + " pizza(s)?\n\n1 - Pepperoni ..................... (+$1.50)\n2 - Ham & Pineapple .......... (+$2.50)\n3 - Sausage ....................... (+$1.50)\n4 - Extra Cheese ................ (+$0.75)\n5 - No Extra Topping ......... (+$0.00)\n\n" + inputMessage ) );
+    var toppingMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA TOPPINGS\nSub total: $" + subTotal.toFixed(2) + "\n\nWhich topping would you like to add to your " + pizza + " pizza(s)?\n\n1 - Pepperoni ..................... (+$1.50)\n2 - Ham & Pineapple .......... (+$2.50)\n3 - Sausage ....................... (+$1.50)\n4 - Extra Cheese ................ (+$0.75)\n5 - No Extra Topping ......... (+$0.00)\n\n" + INPUT_MESSAGE ) );
 
     if ( toppingMenu == 1 )
     {
@@ -128,7 +132,7 @@ while (placeOrderResult)
     subTotal += toppingPrice;
 
 
-    var beverageMenu = parseInt( prompt("STEP " + (steps++) + ": BEVERAGES\nSub total: $" + subTotal.toFixed(2) + "\n\nWhat beverage would you like to add to your order?\nEach beverage is a standard 2L bottle at a price of $1.25.\n\n1 - Cola Cola\n2 - Sprite\n3 - Fanta\n4 - No Beverage\n\n" + inputMessage ) );
+    var beverageMenu = parseInt( prompt("STEP " + (steps++) + ": BEVERAGES\nSub total: $" + subTotal.toFixed(2) + "\n\nWhat beverage would you like to add to your order?\nEach beverage is a standard 2L bottle at a price of $1.25.\n\n1 - Cola Cola\n2 - Sprite\n3 - Fanta\n4 - No Beverage\n\n" + INPUT_MESSAGE ) );
 
     if ( beverageMenu == 1 )
     {
@@ -157,7 +161,7 @@ while (placeOrderResult)
     subTotal += beveragePrice;
 
 
-    var dessertMenu = parseInt( prompt("STEP " + (steps++) + ": DESSERTS\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to include any of our dessert options to your order?\n\n1 - Cinnamon Bites .............. (+$3.00)\n2 - Chocolate Cake(x2) ........ (+$5.00)\n3 - No Dessert ..................... (+$0.00)\n\n" + inputMessage ) );
+    var dessertMenu = parseInt( prompt("STEP " + (steps++) + ": DESSERTS\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to include any of our dessert options to your order?\n\n1 - Cinnamon Bites .............. (+$3.00)\n2 - Chocolate Cake(x2) ........ (+$5.00)\n3 - No Dessert ..................... (+$0.00)\n\n" + INPUT_MESSAGE ) );
 
     if ( dessertMenu == 1 )
     {
@@ -194,7 +198,7 @@ while (placeOrderResult)
 
 
 
-    var tip = parseInt( prompt("STEP " + steps + ": DRIVER TIP\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to give a tip to the driver?\n\n1 - Yes\n2 - No\n\n" + inputMessage ) );
+    var tip = parseInt( prompt("STEP " + steps + ": DRIVER TIP\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to give a tip to the driver?\n\n1 - Yes\n2 - No\n\n" + INPUT_MESSAGE ) );
 
     if ( tip == 1 )
     {
@@ -219,7 +223,7 @@ while (placeOrderResult)
     alert(orderReview);
 
 
-    var submitOrder = parseInt( prompt("Would you like to submit your pizza order?\nOrder Total: $" + orderTotal.toFixed(2) + "\n\n1 - Yes\n2 - No\n\n" + inputMessage) );
+    var submitOrder = parseInt( prompt("Would you like to submit your pizza order?\nOrder Total: $" + orderTotal.toFixed(2) + "\n\n1 - Yes\n2 - No\n\n" + INPUT_MESSAGE) );
 
     if ( submitOrder == 1 )
     {
@@ -232,24 +236,15 @@ while (placeOrderResult)
     }
 
 
-//    message = "testing";
     placeOrderResult = false;
 }
 
-
-
 //GIVENS
-
-
 
 //RESULT VARIABLES
 
-
-
 //RESULT TO PRINT
-//var orderReview;
-
-//var message;  //Concatenating the resulting message to a string.
+//Concatenating the resulting message to a string.
 
 console.log("\n\n" + message);  // Display the resulting message in the console.
 
