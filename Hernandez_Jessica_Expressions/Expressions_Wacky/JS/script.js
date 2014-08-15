@@ -48,8 +48,6 @@ var subTotal;
 
 var orderReview;
 
-var submitOrder;
-
 var orderTotal;
 
 var placeOrder = parseInt( prompt( "Thank you for visiting Pizza Script!\nAt the moment our site is experiencing some technical difficulties, BUT we will still be able to take your order. In order to do so, you will be prompted with a series of dialog boxes requesting your specified input for your order.\n\nWe cannot accept credit cards through this interface, but we will be able to give you a full order price estimate before you actually submit your order. This will allow you time to verify if you have the sufficient funds in cash to therefore place your order.\n\n\nWould you like to place an order?\n\n1 - Yes\n2 - No\n\n" + inputMessage ) );
@@ -152,7 +150,7 @@ while (placeOrderResult)
 
     if ( beverageMenu == 4 )
     {
-        beverageName = "No";
+        beverageName = "No Beverage";
         beveragePrice = 0.00;
     }
 
@@ -182,27 +180,28 @@ while (placeOrderResult)
     subTotal += dessertPrice;
 
 
+    console.log("Almost done taking your order, just a few more prompts.");
     alert("Almost done taking your order, just a few more prompts.");
 
 
-    var customerName = prompt("STEP " + (steps++) + ": CUSTOMER INFORMATION\n\nWhat is your name?");
+    customerName = prompt("STEP " + steps + ": CUSTOMER INFORMATION\n\nWhat is your name?");
 
-    var phoneNum = prompt("STEP " + steps + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input a contact phone number.\n(Ex: (xxx) xxx-xxxx )");
+    phoneNum = prompt("STEP " + steps + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input a contact phone number.\n(Ex: (xxx) xxx-xxxx )");
 
-    var streetAddress = prompt("STEP " + steps + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input your street address of your delivery; include your apartment number if applicable.\n(Ex: 12345 N.W. 77 Street, Apt# 202 )");
+    streetAddress = prompt("STEP " + steps + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input your street address of your delivery; include your apartment number if applicable.\n(Ex: 12345 N.W. 77 Street, Apt# 202 )");
 
-    var cityStateZip = prompt("STEP " + steps + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input your city, state and zip-code of your delivery.\n(Ex: Miami, FL 33131 )");
+    cityStateZip = prompt("STEP " + (steps++) + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input your city, state and zip-code of your delivery.\n(Ex: Miami, FL 33131 )");
 
 
 
-    var tip = parseInt( prompt("STEP " + (steps++) + ": DRIVER TIP\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to give a tip to the driver?\n\n1 - Yes\n2 - No\n\n" + inputMessage ) );
+    var tip = parseInt( prompt("STEP " + steps + ": DRIVER TIP\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to give a tip to the driver?\n\n1 - Yes\n2 - No\n\n" + inputMessage ) );
 
     if ( tip == 1 )
     {
         tipAmount = parseFloat( prompt("How much tip would you like to give the driver?\n\n** Do not include the '$' sign, just the amount. **") );
     }
 
-    if ( tip = 2 )
+    if ( tip == 2 )
     {
         tipAmount = 0.00;
     }
@@ -210,9 +209,31 @@ while (placeOrderResult)
     subTotal += tipAmount;
 
 
-    message = "testing";
-    placeOrderResult = false;
+    orderTotal = subTotal + DELIVERY_PRICE;
 
+
+    orderReview = "ORDER REVIEW:\n** Please review your order carefully before submitting on the following prompt screen. **\n\nPIZZA:\n" + pizza + " " + pizzaSize + " Pizza(s) @ $" + pizzaSizePrice.toFixed(2) + " each.\nWith " + toppingName + " topping @ $" + toppingPrice.toFixed(2) + ".\n\nBEVERAGE:\n" + beverageName + " @ $" + beveragePrice.toFixed(2) + ".\n\nDESSERT:\n" + dessertName + " dessert @ $" + dessertPrice.toFixed(2) + ".\n\nCUSTOMER DETAILS:\nThis order will be delivered to: " + customerName + "\nTo the address:\n" + streetAddress + " " + cityStateZip + "\nContact Phone #: " + phoneNum + "\n\nSub Total: ........................... $" + subTotal.toFixed(2) + "\nDelivery Charge: ................. $" + DELIVERY_PRICE + "\nTip Amount: ....................... $" + tipAmount.toFixed(2) + "\n\nORDER TOTAL: .................... $" + orderTotal.toFixed(2) + "\n\n** Please remember this will be a cash on delivery order. **";
+
+
+    console.log("\n\n" + orderReview);
+    alert(orderReview);
+
+
+    var submitOrder = parseInt( prompt("Would you like to submit your pizza order?\nOrder Total: $" + orderTotal.toFixed(2) + "\n\n1 - Yes\n2 - No\n\n" + inputMessage) );
+
+    if ( submitOrder == 1 )
+    {
+        message = "Thank you for placing your order and choosing Pizza Script! We appreciate your business.\n\nPlease allow up to 40 minutes for delivery of your order.\nHave a nice day!";
+    }
+
+    if ( submitOrder == 2 )
+    {
+        message = "Your order has been removed from queue.\n\nThank you for visiting Pizza Scrip!\nHave a nice day!";
+    }
+
+
+//    message = "testing";
+    placeOrderResult = false;
 }
 
 
@@ -230,6 +251,6 @@ while (placeOrderResult)
 
 //var message;  //Concatenating the resulting message to a string.
 
-console.log(message);  // Display the resulting message in the console.
+console.log("\n\n" + message);  // Display the resulting message in the console.
 
 alert(message);  // Display the resulting message as an alert to the user.
