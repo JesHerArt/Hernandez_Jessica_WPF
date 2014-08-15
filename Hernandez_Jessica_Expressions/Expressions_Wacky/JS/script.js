@@ -69,7 +69,7 @@ if ( placeOrder == 1 )  //This condition verifies that if the customer input the
 if ( placeOrder == 2 )  //This condition verifies that if the customer input the number 2 for no to place an order, it will therefore not execute the while-loop.
 {
     placeOrderResult = false;  //This variable is equal to false to the while-loop will not execute.
-    message = "Thank you for visiting Pizza Script; sorry our site wasn't completely functional at the moment.\n\nHave a nice day!";  //The variable message is then defined to display a message to the customer thanking them for visiting the site.
+    message = "Thank you for visiting Pizza Script; sorry our website wasn't completely functional at the moment.\n\nHave a nice day! Come again!";  //The variable message is then defined to display a message to the customer thanking them for visiting the site.
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -84,7 +84,7 @@ while (placeOrderResult)  //The while-loop begins here and goes through as long 
     pizza = parseInt( prompt("STEP " + (steps++) + ": PIZZA\n\nHow many pizza pies would you like to order?") );  //This variable gets defined to the number of pizzas the customer wants to order.
 
     //STEP 2: PIZZA MENU
-    var pizzaMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA SIZE\n\nWhat size pizza would you like to order?\n\n1 - Medium  @ $8.00/pie\n2 - Large      @ $10.00/pie\n3 - Jumbo    @ $14.00/pie\n\n" + INPUT_MESSAGE ) );  //This variable gets defined the the corresponding number of the item they choose from the pizza size menu.
+    var pizzaMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA SIZE\n\nWhat size pizza would you like to order?\n\n1 - Medium  @ $8.00/pie\n2 - Large      @ $10.00/pie\n3 - Jumbo    @ $14.00/pie\n\n" + INPUT_MESSAGE ) );  //This variable gets declared and defined to the corresponding number of the item they choose from the pizza size menu.
 
     if ( pizzaMenu == 1 )  //This condition verifies that if the customer input the number 1 for a medium pizza.
     {
@@ -109,7 +109,7 @@ while (placeOrderResult)  //The while-loop begins here and goes through as long 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //STEP 3: TOPPINGS MENU
-    var toppingMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA TOPPINGS\nSub total: $" + subTotal.toFixed(2) + "\n\nWhich topping would you like to add to your " + pizza + " pizza(s)?\n\n1 - Pepperoni ..................... (+$1.50)\n2 - Ham & Pineapple .......... (+$2.50)\n3 - Sausage ....................... (+$1.50)\n4 - Extra Cheese ................ (+$0.75)\n5 - No Extra Topping ......... (+$0.00)\n\n" + INPUT_MESSAGE ) );  //This variable gets defined the the corresponding number of the item they choose from the pizza size menu.
+    var toppingMenu = parseInt( prompt("STEP " + (steps++) + ": PIZZA TOPPINGS\nSub total: $" + subTotal.toFixed(2) + "\n\nWhich topping would you like to add to your " + pizza + " pizza(s)?\n\n1 - Pepperoni ..................... (+$1.50)\n2 - Ham & Pineapple .......... (+$2.50)\n3 - Sausage ....................... (+$1.50)\n4 - Extra Cheese ................ (+$0.75)\n5 - No Extra Topping ......... (+$0.00)\n\n" + INPUT_MESSAGE ) );  //This variable gets declared and defined to the corresponding number of the item they choose from the pizza size menu.
 
     if ( toppingMenu == 1 )  //This condition verifies that if the customer input the number 1 for a pepperoni topping.
     {
@@ -146,7 +146,7 @@ while (placeOrderResult)  //The while-loop begins here and goes through as long 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //STEP 4: BEVERAGE MENU
-    var beverageMenu = parseInt( prompt("STEP " + (steps++) + ": BEVERAGES\nSub total: $" + subTotal.toFixed(2) + "\n\nWhat beverage would you like to add to your order?\nEach beverage is a standard 2L bottle at a price of $1.25.\n\n1 - Cola Cola\n2 - Sprite\n3 - Fanta\n4 - No Beverage\n\n" + INPUT_MESSAGE ) );  //This variable gets defined the the corresponding number of the item they choose from the pizza size menu.
+    var beverageMenu = parseInt( prompt("STEP " + (steps++) + ": BEVERAGES\nSub total: $" + subTotal.toFixed(2) + "\n\nWhat beverage would you like to add to your order?\nEach beverage is a standard 2L bottle at a price of $1.25.\n\n1 - Cola Cola\n2 - Sprite\n3 - Fanta\n4 - No Beverage\n\n" + INPUT_MESSAGE ) );  //This variable gets declared and defined to the corresponding number of the item they choose from the pizza size menu.
 
     if ( beverageMenu == 1 )  //This condition verifies that if the customer input the number 1 for a coca cola beverage.
     {
@@ -177,24 +177,24 @@ while (placeOrderResult)  //The while-loop begins here and goes through as long 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //STEP 5: DESSERT MENU
-    var dessertMenu = parseInt( prompt("STEP " + (steps++) + ": DESSERTS\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to include any of our dessert options to your order?\n\n1 - Cinnamon Bites .............. (+$3.00)\n2 - Chocolate Cake(x2) ........ (+$5.00)\n3 - No Dessert ..................... (+$0.00)\n\n" + INPUT_MESSAGE ) );  //This variable gets defined the the corresponding number of the item they choose from the pizza size menu.
+    var dessertMenu = parseInt( prompt("STEP " + (steps++) + ": DESSERTS\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to include any of our dessert options to your order?\n\n1 - Cinnamon Bites .............. (+$3.00)\n2 - Chocolate Cake(x2) ........ (+$5.00)\n3 - No Dessert ..................... (+$0.00)\n\n" + INPUT_MESSAGE ) );  //This variable gets declared and defined to the corresponding number of the item they choose from the pizza size menu.
 
-    if ( dessertMenu == 1 )
+    if ( dessertMenu == 1 )  //This condition verifies that if the customer input the number 1 for a cinnamon bites dessert.
     {
-        dessertName = "Cinnamon Bites";
-        dessertPrice = 3.00;
+        dessertName = "Cinnamon Bites";  //This variable gets defined to the cinnamon bites dessert since the condition is truly equal to menu choice 1.
+        dessertPrice = 3.00;  //This variable gets defined to the price of the cinnamon bites dessert since the condition is equal to menu choice 1.
     }
 
-    if ( dessertMenu == 2 )
+    if ( dessertMenu == 2 )  //This condition verifies that if the customer input the number 2 for a chocolate cake dessert.
     {
-        dessertName = "Chocolate Cake(x2)";
-        dessertPrice = 5.00;
+        dessertName = "Chocolate Cake(x2)";  //This variable gets defined to the chocolate cake dessert since the condition is truly equal to menu choice 2.
+        dessertPrice = 5.00;  //This variable gets defined to the price of the chocolate cake dessert since the condition is equal to menu choice 2.
     }
 
-    if ( dessertMenu == 3 )
+    if ( dessertMenu == 3 )  //This condition verifies that if the customer input the number 3 for no dessert.
     {
-        dessertName = "No";
-        dessertPrice = 0.00;
+        dessertName = "No";  //This variable gets defined to no dessert since the condition is truly equal to menu choice 3.
+        dessertPrice = 0.00;  //This variable gets defined to the price of no dessert since the condition is equal to menu choice 3.
     }
 
     subTotal += dessertPrice;  //The subTotal variable gets updated to the current subTotal amount plus the price of the dessert the customer added.
@@ -209,27 +209,27 @@ while (placeOrderResult)  //The while-loop begins here and goes through as long 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //STEP 6: COLLECTING CUSTOMERS' INFORMATION
-    customerName = prompt("STEP " + steps + ": CUSTOMER INFORMATION\n\nWhat is your name?");
+    customerName = prompt("STEP " + steps + ": CUSTOMER INFORMATION\n\nWhat is your name?"); //This variable gets defines to the name of the customer placing the order.
 
-    phoneNum = prompt("STEP " + steps + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input a contact phone number.\n(Ex: (xxx) xxx-xxxx )");
+    phoneNum = prompt("STEP " + steps + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input a contact phone number.\n(Ex: (xxx) xxx-xxxx )");  //This variable gets defined to the contact phone number of the customer.
 
-    streetAddress = prompt("STEP " + steps + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input your street address of your delivery; include your apartment number if applicable.\n(Ex: 12345 N.W. 77 Street, Apt# 202 )");
+    streetAddress = prompt("STEP " + steps + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input your street address of your delivery; include your apartment number if applicable.\n(Ex: 12345 N.W. 77 Street, Apt# 202 )");  //This variable gets defined to the street address portion of the customers' delivery address.
 
-    cityStateZip = prompt("STEP " + (steps++) + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input your city, state and zip-code of your delivery.\n(Ex: Miami, FL 33131 )");
+    cityStateZip = prompt("STEP " + (steps++) + ": CUSTOMER INFORMATION CONTINUED...\n\nPlease input your city, state and zip-code of your delivery.\n(Ex: Miami, FL 33131 )");  //This variable gets defined to the city, state and zip-code portion of the customers' delivery address.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //STEP 7: DRIVER'S TIP AMOUNT
-    var tip = parseInt( prompt("STEP " + steps + ": DRIVER TIP\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to give a tip to the driver?\n\n1 - Yes\n2 - No\n\n" + INPUT_MESSAGE ) );  //This variable gets defined the the corresponding number of the customers decision to give the driver a tip or not.
+    var tip = parseInt( prompt("STEP " + steps + ": DRIVER TIP\nSub total: $" + subTotal.toFixed(2) + "\n\nWould you like to give a tip to the driver?\n\n1 - Yes\n2 - No\n\n" + INPUT_MESSAGE ) );  //This variable gets declared and defined to the corresponding number of the customers decision to give the driver a tip or not.
 
-    if ( tip == 1 )
+    if ( tip == 1 )  //This condition verifies that if the customer input the number 1 to therefore input the amount of tip they want to give the driver.
     {
-        tipAmount = parseFloat( prompt("How much tip would you like to give the driver?\n\n** Do not include the '$' sign, just the amount. **") );
+        tipAmount = parseFloat( prompt("How much tip would you like to give the driver?\n\n** Do not include the '$' sign, just the amount. **") );  //This variable gets defined to the amount the customer want to get the driver as a tip.
     }
 
-    if ( tip == 2 )
+    if ( tip == 2 )  //This condition verifies that if the customer input the number 2 to therefore not leave a tip for the driver.
     {
-        tipAmount = 0.00;
+        tipAmount = 0.00;  //This variable gets defined as 0.00 since the customer did not want to give a tip to the driver.
     }
 
     subTotal += tipAmount;  //The subTotal variable gets updated to the current subTotal amount plus the amount of tip the customer wants to give the driver.
@@ -251,16 +251,16 @@ while (placeOrderResult)  //The while-loop begins here and goes through as long 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    var submitOrder = parseInt( prompt("Would you like to submit your pizza order?\nOrder Total: $" + orderTotal.toFixed(2) + "\n\n1 - Yes\n2 - No\n\n" + INPUT_MESSAGE) );
+    var submitOrder = parseInt( prompt("Would you like to submit your pizza order?\nOrder Total: $" + orderTotal.toFixed(2) + "\n\n1 - Yes\n2 - No\n\n" + INPUT_MESSAGE) );  //This variable gets declared and defined to the the corresponding number of the decision they make to either submit their pizza online order or not.
 
-    if ( submitOrder == 1 )
+    if ( submitOrder == 1 )  //This condition verifies that if the customer input the number 1 to therefore submit their online pizza order.
     {
-        message = "Thank you for placing your order and choosing Pizza Script! We appreciate your business.\n\nPlease allow up to 40 minutes for delivery of your order.\nHave a nice day!";
+        message = "Thank you for placing your order and choosing Pizza Script! We appreciate your business.\n\nPlease allow up to 40 minutes for delivery of your order.\nHave a nice day! Come again!";  //This is the resulting message to display to the customer that their online pizza order has been placed since they input the number 1 for yes.
     }
 
-    if ( submitOrder == 2 )
+    if ( submitOrder == 2 )  //This condition verifies that if the customer input the number 2 to therefore not submit their online pizza order.
     {
-        message = "Your order has been removed from queue.\n\nThank you for visiting Pizza Scrip!\nHave a nice day!";
+        message = "Your order has been removed from queue.\n\nThank you for visiting Pizza Scrip!\nHave a nice day! Come again!";  //This is the resulting message to display to the customer their order has been removed since they input the number 2 for no.
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
