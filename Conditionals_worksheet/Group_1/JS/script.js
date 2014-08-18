@@ -25,12 +25,12 @@ if ( unit === "F" || unit === "f" ){  //This if determines if the unit measureme
 
     message = "The temperature " + degrees + "\xB0 Celsius is equivalent to " + conversion + "\xB0 Fahrenheit.";  //Concatenating the resulting message to a string.
 
-}else if ( unit === "C" || unit === "c"){  //This else if determines if the unit measurement entered is equivalent to C or c.
+}else if ( unit === "C" || unit === "c"){  //This else-if determines if the unit measurement entered is equivalent to C or c.
     conversion = Math.round( ( 5/9 * (degrees - 32) ) * 100 ) / 100;  //The conversion variable gets defined to the result of the fahrenheit to celsius conversion.
 
     message = "The temperature " + degrees + "\xB0 Fahrenheit is equivalent to " + conversion + "\xB0 Celsius.";  //Concatenating the resulting message to a string.
 
-}else {
+}else {  //The default message to be displayed if an invalid measurement unit is input by the user.
     message = "You have entered an invalid unit measurement. Try again.";  //Concatenating the resulting message to a string.
 }
 
