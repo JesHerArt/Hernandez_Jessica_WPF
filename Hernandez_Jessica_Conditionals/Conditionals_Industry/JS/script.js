@@ -7,7 +7,7 @@
  */
 
 //OVERVIEW:
-var overview = "CALCULATING POSTER COSTS\n\nAside from Graphic Design services you provide to clients, you also offer them poster printing services to be able to provide them with their final product for any poster you design for them. A couple of your local print shops have different deals every week so you always try to use the print shop that offers the lowest price which would be benefit yourself and your client.\n\nPrint Shop #1 (\"PrintingPlus\") usually charges a range between $1.50 and $2.75 per square foot. It depends which deal that have that week.\n\nPrint Shop #2 (\"Quick Print\") usually charges a flat rate of $5.00 plus an additional $1.25 per square foot.\n\nTherefore, depending what pricing deal PrintingPlus is having, will determine which print shop has the best deal for the week.";  //Message to display to user about the overview of this calculation.
+var overview = "CALCULATING POSTER COSTS\n\nAside from Graphic Design services you provide to clients, you also offer them poster printing services to be able to provide them with their final product for any poster you design for them. A couple of your local print shops have different deals every week so you always try to use the print shop that offers the lowest price which would be benefit yourself and your client.\n\nPrint Shop #1 (\"PrintingPlus\") usually charges a range between $1.50 and $2.75 per square foot. It depends which deal they have that week.\n\nPrint Shop #2 (\"Quick Print\") usually charges a flat rate of $5.00 plus an additional $1.25 per square foot.\n\nTherefore, depending what pricing deal PrintingPlus is having, will determine which print shop has the best deal for the week.";  //Message to display to user about the overview of this calculation.
 
 alert(overview);  // Display the overview message as an alert to the user.
 
@@ -52,6 +52,8 @@ if ( shop1SqFtRate === "" || shop1SqFtRate < 0){  //Poster length input validati
     shop1SqFtRate = prompt( "You've input an invalid Rate for the poster printing deal pricing, please try again.\n\n\nWhat is the current deal for poster print jobs at PrintingPlus (print shop #1) this week?\nWeekly deals range between $1.50 - $2.75 per square foot.\n\n** Do not input the '$' symbol, just the amount. **" );
 
 }
+
+shop1SqFtRate = parseFloat( shop1SqFtRate );
 
 
 
