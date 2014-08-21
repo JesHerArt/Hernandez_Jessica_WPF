@@ -56,3 +56,16 @@ if ( shop1SqFtRate === "" || shop1SqFtRate < 0){  //Poster length input validati
 
 
 //RESULT VARIABLES:
+var posterSqFt = (posterLength + posterWidth) / oneFoot;
+
+var shop1Cost = posterSqFt * shop1SqFtRate;
+
+var shop2Cost = posterSqFt * shop2SqFtRate + shop2FlatRate;
+
+var costDifference;
+
+costDifference = ( shop1Cost < shop2Cost ) ? "PrintingPlus (Print Shop #1) would cost you less to print a " + posterWidth + "in. x " + posterLength + "in. color poster.\n\nWith rate of $" + shop1SqFtRate.toFixed(2) + " per Sq. Ft., your total spending cost is $" + shop1Cost.toFixed(2) + ".\n\nYou are saving $" + (shop2Cost - shop1Cost).toFixed(2) + " by printing the poster at PrintingPlus." : "Quick Print (Print Shop #2) would cost you less to print a " + posterWidth + "in. x " + posterLength + "in. color poster.\n\nWith rate of $" + shop2SqFtRate.toFixed(2) + " per Sq. Ft. plus the flat rate fee of $" + shop2FlatRate.toFixed(2) + ", your total spending cost is $" + shop2Cost.toFixed(2) + ".\n\nYou are saving $" + (shop1Cost - shop2Cost).toFixed(2) + " by printing the poster at Quick Print.";
+
+
+
+//RESULT TO PRINT:
