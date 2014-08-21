@@ -31,22 +31,22 @@ var tier5 = 525.00;  //Tier 4 insurance cost for car values over $80,000.00
 
 
 //GIVENS:
-var budget = prompt( "What is your monthly budget for use on car related monthly payments?\n\n** Do not put the '$' symbol, just the amount. Ex: 350.00. **" );  //Declaring and defining the budget variable with the user's input.
+var budget = prompt( "What is your monthly budget for use on car related monthly payments?\n\n** Do not input the '$' symbol, just the amount. Ex: 350.00. **" );  //Declaring and defining the budget variable with the user's input.
 
 if ( budget === "" ){  //Budget input validation.
 
-    budget = prompt( "You've input an invalid Budget amount, please try again.\n\nWhat is your monthly budget for use on car related monthly payments?\n\n** Do not put the '$' symbol, just the amount. Ex: 350.00. **" );  //Prompt the user an invalid input for budget was made. Declare and define the budget variable with the user's input.
+    budget = prompt( "You've input an invalid Budget amount, please try again.\n\nWhat is your monthly budget for use on car related monthly payments?\n\n** Do not input the '$' symbol, just the amount. Ex: 350.00. **" );  //Prompt the user an invalid input for budget was made. Declare and define the budget variable with the user's input.
 
 }
 
 budget = parseFloat( budget );  //Parsing the budget input as a double variable.
 
 
-var carValue = prompt( "What is the total value of the vehicle you want to finance?\n\n** Do not put the '$' symbol, just the amount. Ex: 18000.00. **" );  //Declaring and defining the carValue variable with the user's input.
+var carValue = prompt( "What is the total value of the vehicle you want to finance?\n\n** Do not input the '$' symbol, just the amount. Ex: 18000.00. **" );  //Declaring and defining the carValue variable with the user's input.
 
 if ( carValue == "" || carValue < value0 ){  //Car value input validation.
 
-    carValue = prompt( "You've input an invalid Car Value amount, please try again.\n\nWhat is the total value of the vehicle you want to finance?\n\n** Do not put the '$' symbol, just the amount. Ex: 18000.00. **" );  //Prompt the user an invalid input for carValue was made. Declare and define the carValue variable with the user's input.
+    carValue = prompt( "You've input an invalid Car Value amount, please try again.\n\nWhat is the total value of the vehicle you want to finance?\n\n** Do not input the '$' symbol, just the amount. Ex: 18000.00. **" );  //Prompt the user an invalid input for carValue was made. Declare and define the carValue variable with the user's input.
 
 }
 

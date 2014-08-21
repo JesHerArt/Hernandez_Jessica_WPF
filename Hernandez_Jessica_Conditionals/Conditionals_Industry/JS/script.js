@@ -23,3 +23,36 @@ var shop2SqFtRate = 1.25;
 
 
 //GIVENS:
+var posterWidth = prompt( "Enter the poster's width (in inches)." );
+
+if ( posterWidth === "" || posterWidth < 0){  //Poster width input validation.
+
+    posterWidth = prompt( "You've input an invalid Poster Width size, please try again.\n\n\nEnter the poster's width (in inches)." );
+
+}
+
+posterWidth = Number(posterWidth);
+
+
+var posterLength = prompt( "Enter the poster's length (in inches)." );
+
+if ( posterLength === "" || posterLength < 0){  //Poster length input validation.
+
+    posterLength = prompt( "You've input an invalid Poster Length size, please try again.\n\n\nEnter the poster's length (in inches)." );
+
+}
+
+posterLength = Number(posterLength);
+
+
+var shop1SqFtRate = prompt( "What is the current deal for poster print jobs at PrintingPlus (print shop #1) this week?\nWeekly deals range between $1.50 - $2.75 per square foot.\n\n** Do not input the '$' symbol, just the amount. **" );
+
+if ( shop1SqFtRate === "" || shop1SqFtRate < 0){  //Poster length input validation.
+
+    shop1SqFtRate = prompt( "You've input an invalid Rate for the poster printing deal pricing, please try again.\n\n\nWhat is the current deal for poster print jobs at PrintingPlus (print shop #1) this week?\nWeekly deals range between $1.50 - $2.75 per square foot.\n\n** Do not input the '$' symbol, just the amount. **" );
+
+}
+
+
+
+//RESULT VARIABLES:
