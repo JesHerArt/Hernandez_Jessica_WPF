@@ -66,7 +66,13 @@ var shop2Cost = posterSqFt * shop2SqFtRate + shop2FlatRate;
 
 var costDifference;
 
-costDifference = ( shop1Cost < shop2Cost ) ? "PrintingPlus (Print Shop #1) would cost you less to print a " + posterWidth + "in. x " + posterLength + "in. color poster.\n\nWith rate of $" + shop1SqFtRate.toFixed(2) + " per Sq. Ft., your total spending cost is $" + shop1Cost.toFixed(2) + ".\n\nYou are saving $" + (shop2Cost - shop1Cost).toFixed(2) + " by printing the poster at PrintingPlus." : "Quick Print (Print Shop #2) would cost you less to print a " + posterWidth + "in. x " + posterLength + "in. color poster.\n\nWith rate of $" + shop2SqFtRate.toFixed(2) + " per Sq. Ft. plus the flat rate fee of $" + shop2FlatRate.toFixed(2) + ", your total spending cost is $" + shop2Cost.toFixed(2) + ".\n\nYou are saving $" + (shop1Cost - shop2Cost).toFixed(2) + " by printing the poster at Quick Print.";  //Concatenating the resulting message to a string.
+costDifference = ( shop1Cost < shop2Cost ) ? "PrintingPlus (Print Shop #1) would cost you less to print a " + posterWidth + "in. x " + posterLength + "in. color poster.\n\nWith rate of $" + shop1SqFtRate.toFixed(2) + " per Sq. Ft., your total spending cost is $" + shop1Cost.toFixed(2) + ".\n\nYou will save $" + (shop2Cost - shop1Cost).toFixed(2) + " by printing the poster at PrintingPlus." : "Quick Print (Print Shop #2) would cost you less to print a " + posterWidth + "in. x " + posterLength + "in. color poster.\n\nWith rate of $" + shop2SqFtRate.toFixed(2) + " per Sq. Ft. plus the flat rate fee of $" + shop2FlatRate.toFixed(2) + ", your total spending cost is $" + shop2Cost.toFixed(2) + ".\n\nYou will save $" + (shop1Cost - shop2Cost).toFixed(2) + " by printing the poster at Quick Print.";  //Concatenating the resulting message to a string.
+
+if ( shop1Cost === shop2Cost ){
+
+    costDifference = "Both PrintingPlus (Print Shop #1) and Quick Print (Print Shop #2) have the same printing cost to print a " + posterWidth + "in. x " + posterLength + "in. color poster this week. Visit which ever print shop is closest to you at the moment.\n\nYour total spending cost is $" + shop1Cost + ".";
+
+}
 
 
 
