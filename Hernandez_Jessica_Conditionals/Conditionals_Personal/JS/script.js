@@ -82,7 +82,7 @@ var maintenanceMileageDifference = currentMileage - prevMaintenanceMileage;
 
 var oilChange = ( oilMileageDifference >= oilChangeMileage ) ? "OIL CHANGE: REQUIRED ($" + oilChangeCost + ")\nA required maintenance oil change is required. It has been " + oilChangeMileage + "(+) miles since the last oil change." + (maintenanceCostQuote += oilChangeCost) : "OIL CHANGE: NOT REQUIRED";
 
-var rotateTires = ( oilMileageDifference >= rotateTiresMileage ) ? "ROTATE TIRES: REQUIRED ($" + rotateTiresCost + ")\nTire rotation is required for every " + rotateTiresMileage + "(+) miles since the last oil change." + (maintenanceCostQuote += rotateTiresCost) : "ROTATE TIRES: NOT REQUIRED";
+var rotateTires = ( oilMileageDifference >= rotateTiresMileage ) ? "\n\nROTATE TIRES: REQUIRED ($" + rotateTiresCost + ")\nTire rotation is required for every " + rotateTiresMileage + "(+) miles since the last oil change." + (maintenanceCostQuote += rotateTiresCost) : "\n\nROTATE TIRES: NOT REQUIRED";
 
 
 var parts;
@@ -130,13 +130,17 @@ var serviceCharge;
 
 if ( maintenanceCostQuote > 0 ){
 
-    serviceCharge = "SERVICE CHARGE: $" + serviceCost + "\nA service fee charge will be added to the total cost whenever maintenance/tune-ups need to be made to a vehicle.";
+    serviceCharge = "\n\nSERVICE CHARGE: $" + serviceCost + "\nA service fee charge will be added to the total cost whenever maintenance/tune-ups need to be made to a vehicle.";
 
     maintenanceCostQuote += serviceCost;
 
+}else{
+
+    serviceCharge = "\n\nSERVICE CHARGE: $0.00\nNo service fee charge will be added since no required maintenance/tune-ups need to be made to the vehicle."
+
 }
 
-var message;
+var message = "OIL CHANGE & MAINTENANCE CHECK\n\n" + oilChange + rotateTires + parts + serviceCharge + "\n\n\nTOTAL MAINTENANCE COST (QUOTE): $" + maintenanceCostQuote;
 
 
 //RESULT TO PRINT
