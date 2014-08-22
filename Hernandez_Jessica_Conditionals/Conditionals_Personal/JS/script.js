@@ -24,7 +24,17 @@ var sparkPlugMileage = 20000;  //Constant for: Spark Plugs to be replaced every 
 
 var motorMountsMileage = 100000;  //Constant for: Motor Mounts to be replaced at 100,000 miles.
 
-var serviceCharge = 50.00;  //Service charge of $50.00 as part of the maintenance service quote to give the customer.
+var oilChangeCost = 40.00;  //Constant for: Oil change cost.
+
+var rotateTiresCost = 10.00;  //Constant for: Rotate tires cost.
+
+var replaceBrakes = 50.00;    //Constant for: Brakes parts cost.
+
+var replaceSparkPlugs = 45.00;  //Constant for: Spark plugs parts cost.
+
+var replaceMotorMounts = 130.00;  //Constant for: Motor mounts parts cost.
+
+var serviceCost = 50.00;  //Service charge of $50.00 as part of the maintenance service quote to give the customer.
 
 
 
@@ -64,20 +74,69 @@ currentMileage = parseInt(currentMileage);
 
 
 //RESULT VARIABLES:
-var maintenanceCostQuote;
+var maintenanceCostQuote = 0.00;
 
-var oilMileageDifference
+var oilMileageDifference = currentMileage - prevOilChangeMileage;
 
-var maintenanceMileageDifference
+var maintenanceMileageDifference = currentMileage - prevMaintenanceMileage;
 
-var oilChange
+var oilChange = ( oilMileageDifference >= oilChangeMileage ) ? "OIL CHANGE: REQUIRED ($" + oilChangeCost + ")\nA required maintenance oil change is required. It has been " + oilChangeMileage + "(+) miles since the last oil change." + (maintenanceCostQuote += oilChangeCost) : "OIL CHANGE: NOT REQUIRED";
 
-var rotateTires
+var rotateTires = ( oilMileageDifference >= rotateTiresMileage ) ? "ROTATE TIRES: REQUIRED ($" + rotateTiresCost + ")\nTire rotation is required for every " + rotateTiresMileage + "(+) miles since the last oil change." + (maintenanceCostQuote += rotateTiresCost) : "ROTATE TIRES: NOT REQUIRED";
 
-var parts
 
-var message
+var parts;
 
+if ( maintenanceMileageDifference >= brakesMileage ){
+
+    parts = "\n\nREPLACE BRAKES: REQUIRED ($" + replaceBrakes + ")\nBrakes are required to be replaced every " + brakesMileage + " miles.";
+
+    maintenanceCostQuote += replaceBrakes;
+
+}else{
+
+    parts = "\n\nREPLACE BRAKES: NOT REQUIRED";
+
+}
+
+
+if ( maintenanceMileageDifference >= sparkPlugMileage ){
+
+    parts += "\n\nREPLACE SPARK PLUGS: REQUIRED ($" + replaceSparkPlugs + ")\nSpark Plugs are required to be replaced every " + sparkPlugMileage + " miles.";
+
+    maintenanceCostQuote += replaceSparkPlugs;
+
+}else{
+
+    parts += "\n\nREPLACE SPARK PLUGS: NOT REQUIRED";
+
+}
+
+
+if ( currentMileage >= motorMountsMileage ){
+
+    parts += "\n\nREPLACE MOTOR MOUNTS: REQUIRED ($" + replaceMotorMounts + ")\nMotor Mounts need to be replaced every " + motorMountsMileage + " miles.";
+
+    maintenanceCostQuote += replaceMotorMounts;
+
+}else{
+
+    parts += "\n\nREPLACE MOTOR MOUNTS: NOT REQUIRED";
+
+}
+
+
+var serviceCharge;
+
+if ( maintenanceCostQuote > 0 ){
+
+    serviceCharge = "SERVICE CHARGE: $" + serviceCost + "\nA service fee charge will be added to the total cost whenever maintenance/tune-ups need to be made to a vehicle.";
+
+    maintenanceCostQuote += serviceCost;
+
+}
+
+var message;
 
 
 //RESULT TO PRINT
