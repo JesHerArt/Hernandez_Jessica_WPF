@@ -29,3 +29,58 @@ var serviceCharge = 50.00;  //Service charge of $50.00 as part of the maintenanc
 
 
 //GIVENS:
+var prevOilChangeMileage = prompt( "What mileage did the vehicle have when the last oil change was done?" );
+
+if ( prevOilChangeMileage === "" || prevOilChangeMileage < 0 ){
+
+    prevOilChangeMileage = prompt( "You've input an invalid Previous Oil Change Mileage amount, please try again.\n\n\nWhat mileage did the vehicle have when the last oil change was done?" );
+
+}
+
+prevOilChangeMileage = parseInt(prevOilChangeMileage);
+
+
+var prevMaintenanceMileage = prompt( "What mileage did the vehicle have when the last maintenance/tune-up was done?" );
+
+if ( prevMaintenanceMileage === "" || prevMaintenanceMileage < 0 ){
+
+    prevMaintenanceMileage = prompt( "You've input an invalid Previous Maintenance/Tune-up Mileage amount, please try again.\n\n\nWhat mileage did the vehicle have when the last maintenance/tune-up was done?" );
+
+}
+
+prevMaintenanceMileage = parseInt(prevMaintenanceMileage);
+
+
+var currentMileage = prompt( "What mileage does the vehicle currently have at the moment?" );
+
+if ( currentMileage === "" || currentMileage < 0 ){
+
+    currentMileage = prompt( "You've input an invalid Current Vehicle Mileage amount, please try again.\n\n\nWhat mileage does the vehicle currently have at the moment?" );
+
+}
+
+currentMileage = parseInt(currentMileage);
+
+
+
+//RESULT VARIABLES:
+var maintenanceCostQuote;
+
+var oilMileageDifference
+
+var maintenanceMileageDifference
+
+var oilChange
+
+var rotateTires
+
+var parts
+
+var message
+
+
+
+//RESULT TO PRINT
+console.log(message);   // Display the final message in the console.
+
+alert(message);         // Display the final message as an alert to the user.
