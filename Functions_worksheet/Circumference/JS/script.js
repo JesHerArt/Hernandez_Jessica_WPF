@@ -26,7 +26,7 @@ radius = Number(radius);
 //FUNCTION
 function getCircumference( r ){
     var circle = 2 * Math.PI * r;
-    return circle;
+    return Math.round ( circle * 100 ) / 100;
 }
 
 
