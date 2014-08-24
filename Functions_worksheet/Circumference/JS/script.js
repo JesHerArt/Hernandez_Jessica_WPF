@@ -5,3 +5,12 @@
  Problem 1: Circumference
  */
 
+//OVERVIEW:
+var overview = "CIRCUMFERENCE CALCULATOR\n\nThis program will calculate the circumference of a circle for you when you provide the radius of the circle.";
+
+console.log(overview);
+
+alert(overview);
+
+
+
