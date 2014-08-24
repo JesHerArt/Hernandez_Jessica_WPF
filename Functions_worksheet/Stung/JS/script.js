@@ -30,7 +30,7 @@ var stingsPerPound = 8.6666666667;
 
 
 
-//FUNCTION
+//FUNCTION:
 function getStings( w ){
 
     var stings = w * stingsPerPound;
@@ -41,3 +41,5 @@ function getStings( w ){
 
 
 
+//INVOKE THE FUNCTION:
+var totalStings = getStings(victimWeight);
