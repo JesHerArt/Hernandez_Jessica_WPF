@@ -6,9 +6,7 @@
  */
 
 //OVERVIEW:
-var overview = "CIRCUMFERENCE CALCULATOR\n\nThis program will calculate the circumference of a circle for you when you provide the radius of the circle.";
-
-console.log(overview);
+var overview = "CIRCUMFERENCE CALCULATOR\n\nWhen you provide the radius of a circle, this program will calculate the circumference of the circle for you.";
 
 alert(overview);
 
@@ -35,3 +33,12 @@ function getCircumference( r ){
 
 //INVOKE THE FUNCTION
 var circumference = getCircumference(radius);
+
+
+
+//RESULT TO PRINT
+var message = "CIRCUMFERENCE CALCULATOR\n\nA circle with the radius of " + radius + " has a circumference of " + circumference;
+
+console.log(message);
+
+alert(message);
