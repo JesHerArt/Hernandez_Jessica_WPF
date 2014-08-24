@@ -22,3 +22,11 @@ while ( victimWeight == "" || victimWeight < 0 ){
 }
 
 victimWeight = Number(victimWeight);
+
+
+
+//CONSTANTS:
+var stingsPerPound = 8.6666666667;
+
+
+
