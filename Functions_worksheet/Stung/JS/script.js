@@ -30,3 +30,14 @@ var stingsPerPound = 8.6666666667;
 
 
 
+//FUNCTION
+function getStings( w ){
+
+    var stings = w * stingsPerPound;
+
+    return stings;
+
+}
+
+
+
