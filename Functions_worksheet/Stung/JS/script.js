@@ -43,3 +43,12 @@ function getStings( w ){
 
 //INVOKE THE FUNCTION:
 var totalStings = getStings(victimWeight);
+
+
+
+//RESULT TO PRINT:
+var message = "BEE STING CALCULATOR\n\nIt takes " + totalStings + " bee stings to kill an animal with a weight of " + victimWeight + "lbs.";  //Concatenating the resulting message to a string.
+
+console.log(message);   // Display the resulting message in the console.
+
+alert(message);         // Display the resulting message as an alert to the user.
