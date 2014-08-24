@@ -14,3 +14,11 @@ alert(overview);
 
 
 
+//GIVENS:
+var radius = prompt( "What is the radius of the circle?" );
+
+if ( radius == "" || radius < 0 ){
+    radius = prompt( "You've input an invalid length for the radius, please try again.\n\nWhat is the radius of the circle?" );
+}
+
+radius = Number(radius);
