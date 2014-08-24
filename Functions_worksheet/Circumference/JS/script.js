@@ -30,3 +30,8 @@ function getCircumference( r ){
     var circle = 2 * Math.PI * r;
     return circle;
 }
+
+
+
+//INVOKE THE FUNCTION
+var circumference = getCircumference(radius);
