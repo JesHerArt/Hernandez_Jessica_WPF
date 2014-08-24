@@ -22,3 +22,11 @@ if ( radius == "" || radius < 0 ){
 }
 
 radius = Number(radius);
+
+
+
+//FUNCTION
+function getCircumference( r ){
+    var circle = 2 * Math.PI * r;
+    return circle;
+}
