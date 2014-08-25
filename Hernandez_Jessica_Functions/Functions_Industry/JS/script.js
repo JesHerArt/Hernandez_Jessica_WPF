@@ -39,3 +39,22 @@ for ( i = 0; i < monthlyEarnings.length; i++ ){
     monthlyEarnings[i] = Number(monthlyEarnings[i]);
 
 }
+
+
+
+//ANONYMOUS FUNCTION:
+var getAverage = function (array){
+
+    var total = 0;
+
+    for ( i = 0; i < array.length; i++ ){
+
+        total += array[i];
+
+    }
+
+    var average = total / array.length;
+
+    return average;
+
+}
