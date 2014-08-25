@@ -78,3 +78,34 @@ var getTotal = function (gal, gas, carWash){
 //INVOKING THE FUNCTION:
 var total1 = getTotal(gallons, gasPrice1, washPrice1);
 var total2 = getTotal(gallons, gasPrice2, washPrice2);
+
+
+
+//RESULTS:
+var message = "GAS STATION PRICE COMPARISON CALCULATOR\n\n";
+var savings;
+
+if ( total1 < total2 ){
+
+    savings = total2 - total1;
+
+    message += "At a total price of $" + total1 + ", Gas Station #1 would offer a lower price ($" + gasPrice1 + ") to fill up your " + gallons + " gallon gas tank and also get a cash wash ($" + washPrice1 + ").\n\nTotal Savings: $" + savings;
+
+}else if ( total1 > total2 ){
+
+    savings = total1 - total2;
+
+    message += "At a total price of $" + total2 + ", Gas Station #1 would offer a lower price ($" + gasPrice2 + ") to fill up your " + gallons + " gallon gas tank and also get a cash wash ($" + washPrice2 + ").\n\nTotal Savings: $" + savings;
+
+}else{
+
+    message += "At a total price of $" + total2 + ", both Gas Station #1 and Gas Station #2 offer the same price ($" + gasPrice2 + ") to fill up your " + gallons + " gallon gas tank and also get a cash wash ($" + washPrice2 + ").";
+
+}
+
+
+
+//RESULTS TO PRINT:
+console.log(message);   // Display the final message in the console.
+
+alert(message);         // Display the final message as an alert to the user.
