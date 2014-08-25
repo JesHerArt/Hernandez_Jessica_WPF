@@ -72,3 +72,9 @@ var getTotal = function (gal, gas, carWash){
     return total;
 
 }
+
+
+
+//INVOKING THE FUNCTION:
+var total1 = getTotal(gallons, gasPrice1, washPrice1);
+var total2 = getTotal(gallons, gasPrice2, washPrice2);
