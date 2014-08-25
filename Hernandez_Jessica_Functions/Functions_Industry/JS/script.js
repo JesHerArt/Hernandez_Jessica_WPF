@@ -13,3 +13,29 @@ var overview = "AVERAGE WAGE CALCULATOR\n\nBeing that your are a fairly new free
 //The yearly average estimate is from: http://www.bls.gov/oes/current/oes151134.htm
 
 alert(overview);
+
+
+
+//CONSTANTS:
+var estWage = 67540.00;
+
+
+
+//GIVENS:
+var monthlyEarnings = new Array(3);
+
+for ( i = 0; i < monthlyEarnings.length; i++ ){
+
+    var monthCount = 1;
+
+    monthlyEarnings[i] = prompt( "How much did you make in month " + monthCount + " of your time freelancing?" );
+
+    while ( monthlyEarnings[i] == "" || monthlyEarnings[i] < 0 ){
+
+        monthlyEarnings[i] = prompt( "An invalid amount has been entered for month " + monthCount + ", please try again.\n\n\nHow much did you make in month " + monthCount + " of your time freelancing?" );
+
+    }
+
+    monthlyEarnings[i] = Number(monthlyEarnings[i]);
+
+}
