@@ -1,8 +1,11 @@
 /* Jessica J. Hernandez
  ID: 0004631401
+ WPF 201408 Section 01
  August 25, 2014
+ Week 4
  Functions Assignment: Personal
  */
+
 
 //OVERVIEW:
 var overview = "GAS STATION PRICE COMPARISON CALCULATOR\n\nYou need to go to the gas station to fill up your gas tank and also get a car wash.\n\nYou want to see which of the two gas stations will be cheaper to go to if you fully fill up your gas tank and get a car wash in the same gas station.";  //Message to display to user about the overview of this calculation.
