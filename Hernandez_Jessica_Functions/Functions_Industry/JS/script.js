@@ -53,7 +53,7 @@ var getAverage = function (array){
 
     }
 
-    var average = total / array.length;
+    var average = Math.round( (total / array.length) * 100 ) / 100;
 
     return average;
 
@@ -63,3 +63,16 @@ var getAverage = function (array){
 
 //INVOKING THE FUNCTION:
 var monthlyAvg = getAverage(monthlyEarnings);
+
+
+
+//RESULTS TO PRINT:
+var estWageMonthlyAvg = Math.round( (estWage / 12) * 100 ) / 100;
+
+var compare = ( monthlyAvg >= estWageMonthlyAvg ) ? "CONGRATULATIONS! You are on the right track to make the estimated $" + estWage + " a year as a Web Developer even while being a freelancer.\n\nThe estimated monthly average is $" + estWageMonthlyAvg + " and you are averaging $" + monthlyAvg + " per month. Keep up the great work!" : "Unfortunately your monthly average earnings ($" + monthlyAvg + ") are lower than the estimated monthly average earnings ($" + estWageMonthlyAvg + ") to be able to make the estimated yearly wage of $" + estWage + " as a Web Developer. Keep up the effort!";
+
+var message = "AVERAGE WAGE CALCULATOR\n\n" + compare;
+
+console.log(message);
+
+alert(message);
