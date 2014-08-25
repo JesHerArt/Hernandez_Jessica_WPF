@@ -62,3 +62,13 @@ while ( washPrice2 == "" || washPrice2 < 0 ){
 }
 
 washPrice2 = Number(washPrice2);
+
+
+
+//ANONYMOUS FUNCTION:
+var getTotal = function (gal, gas, carWash){
+
+    var total = gal * gas + carWash;
+    return total;
+
+}
