@@ -58,3 +58,8 @@ var getAverage = function (array){
     return average;
 
 }
+
+
+
+//INVOKING THE FUNCTION:
+var monthlyAvg = getAverage(monthlyEarnings);
