@@ -34,3 +34,50 @@ for ( i = 0; i < numbers.length; i++ ){
     numCount++;
 
 }
+
+
+
+//FUNCTIONS:
+function getMean(array){
+
+    var total = 0;
+
+    for ( i = 0; i < array.length; i++ ){
+
+        total += array[i];
+
+    }
+
+    var average = total / array.length;
+
+    return total;
+
+}
+
+function getMedian(array){
+
+    array.sort(function(a, b){return a-b});
+
+    var middle = array[2];
+
+    return middle;
+
+}
+
+function getStandardDeviation(array){
+
+    var average = getMean(array);
+
+    var total = 0;
+
+    for ( i = 0; i < array.length; i++ ){
+
+        total += Math.pow( array[i] - average, 2 );
+
+    }
+
+    var stanDev = Math.sqrt( total / array.length );
+
+    return stanDev;
+
+}
