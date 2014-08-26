@@ -81,3 +81,12 @@ function getStandardDeviation(array){
     return stanDev;
 
 }
+
+
+
+//INVOKING THE FUNCTIONS:
+var mean = getMean(numbers);
+
+var median = getMedian(numbers);
+
+var standardDeviation = getStandardDeviation(numbers);
