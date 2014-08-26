@@ -5,3 +5,9 @@
  Week 4
  Functions Assignment: Wacky
  */
+
+
+//OVERVIEW:
+var overview = "MEAN, MEDIAN & STANDARD DEVIATION CALCULATOR\n\nThis program will calculate the mean, median and standard deviation of five numbers you input.";
+
+alert(overview);
