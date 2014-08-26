@@ -19,7 +19,7 @@ var gallons = prompt( "How many gallons does it take to completely fill up the g
 
 while( gallons == "" || gallons < 0 ){  //While-loop is used for validation if the input is an empty string or less than zero.
 
-    gallons = prompt( "An invalid amount of gallons has been entered, please try again.\n\n\nHow many gallons does it take to completely fill up the gas tank in your car?" );  //If the the input is invalid, the user gets prompted again to enter the number of gallons the gas tank holds. The variable gets declared and defined as the users input.
+    gallons = prompt( "An invalid amount of gallons has been entered, please try again.\n\n\nHow many gallons does it take to completely fill up the gas tank in your car?" );  //If the the input is invalid, the user gets prompted again to enter the number of gallons the gas tank holds. The variable gets defined as the users input.
 
 }
 
@@ -30,7 +30,7 @@ var gasPrice1 = prompt( "How much is Gas Station #1 charging per each gallon of 
 
 while ( gasPrice1 == "" || gasPrice1 < 0 ){  //While-loop is used for validation if the input is an empty string or less than zero.
 
-    gasPrice1 = prompt( "An invalid amount has been entered for the gas price, please try again.\n\n\nHow much is Gas Station #1 charging per each gallon of gas?\n\n** Do not input the '$' symbol, just the price. **" );  //If the the input is invalid, the user gets prompted again to enter the price for gas at the first gas station. The variable gets declared and defined as the users input.
+    gasPrice1 = prompt( "An invalid amount has been entered for the gas price, please try again.\n\n\nHow much is Gas Station #1 charging per each gallon of gas?\n\n** Do not input the '$' symbol, just the price. **" );  //If the the input is invalid, the user gets prompted again to enter the price for gas at the first gas station. The variable gets defined as the users input.
 
 }
 
@@ -41,7 +41,7 @@ var washPrice1 = prompt( "How much does a car wash cost at Gas Station #1\n\n** 
 
 while ( washPrice1 == "" || washPrice1 < 0 ){  //While-loop is used for validation if the input is an empty string or less than zero.
 
-    washPrice1 = prompt( "An invalid amount has been entered for the car wash price, please try again.\n\n\nHow much does a car wash cost at Gas Station #1\n\n** Do not input the '$' symbol, just the price. **" );  //If the the input is invalid, the user gets prompted again to enter the price for a car wash at the first gas station. The variable gets declared and defined as the users input.
+    washPrice1 = prompt( "An invalid amount has been entered for the car wash price, please try again.\n\n\nHow much does a car wash cost at Gas Station #1\n\n** Do not input the '$' symbol, just the price. **" );  //If the the input is invalid, the user gets prompted again to enter the price for a car wash at the first gas station. The variable gets defined as the users input.
 
 }
 
@@ -53,7 +53,7 @@ var gasPrice2 = prompt( "How much is Gas Station #2 charging per each gallon of 
 
 while ( gasPrice2 == "" || gasPrice2 < 0 ){  //While-loop is used for validation if the input is an empty string or less than zero.
 
-    gasPrice2 = prompt( "An invalid amount has been entered for the gas price, please try again.\n\n\nHow much is Gas Station #2 charging per each gallon of gas?\n\n** Do not input the '$' symbol, just the price. **" );  //If the the input is invalid, the user gets prompted again to enter the price for gas at the second gas station. The variable gets declared and defined as the users input.
+    gasPrice2 = prompt( "An invalid amount has been entered for the gas price, please try again.\n\n\nHow much is Gas Station #2 charging per each gallon of gas?\n\n** Do not input the '$' symbol, just the price. **" );  //If the the input is invalid, the user gets prompted again to enter the price for gas at the second gas station. The variable gets defined as the users input.
 
 }
 
@@ -64,7 +64,7 @@ var washPrice2 = prompt( "How much does a car wash cost at Gas Station #2\n\n** 
 
 while ( washPrice2 == "" || washPrice2 < 0 ){  //While-loop is used for validation if the input is an empty string or less than zero.
 
-    washPrice2 = prompt( "An invalid amount has been entered for the car wash price, please try again.\n\n\nHow much does a car wash cost at Gas Station #2\n\n** Do not input the '$' symbol, just the price. **" );  //If the the input is invalid, the user gets prompted again to enter the price for a car wash at the second gas station. The variable gets declared and defined as the users input.
+    washPrice2 = prompt( "An invalid amount has been entered for the car wash price, please try again.\n\n\nHow much does a car wash cost at Gas Station #2\n\n** Do not input the '$' symbol, just the price. **" );  //If the the input is invalid, the user gets prompted again to enter the price for a car wash at the second gas station. The variable gets defined as the users input.
 
 }
 
