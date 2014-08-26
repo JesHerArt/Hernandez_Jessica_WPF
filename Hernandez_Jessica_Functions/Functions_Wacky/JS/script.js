@@ -90,3 +90,20 @@ var mean = getMean(numbers);
 var median = getMedian(numbers);
 
 var standardDeviation = getStandardDeviation(numbers);
+
+
+
+//RESULT TO PRINT:
+var message = "MEAN, MEDIAN & STANDARD DEVIATION CALCULATOR\n\nYour Numbers: ";
+
+for ( i = 0; i <numbers.length; i++ ){
+
+    message += numbers[i] + ", ";
+
+}
+
+message += "\n\nMean: " + mean + "\nMedian: " + median + "\nStandard Deviation: " + standardDeviation;
+
+console.log(message);
+
+alert(message);
