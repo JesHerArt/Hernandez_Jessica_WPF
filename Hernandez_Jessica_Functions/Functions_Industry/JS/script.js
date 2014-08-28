@@ -30,7 +30,7 @@ for ( i = 0; i < monthlyEarnings.length; i++ ){  //For the length of the array t
 
     monthlyEarnings[i] = prompt( "How much did you make in month " + monthCount + " of your time freelancing?" );  //Prompts the user to enter the monthly earnings for specified month by the month counter.  The variable gets declared and defined as the users input.
 
-    while ( monthlyEarnings[i] == "" || monthlyEarnings[i] < 0 ){  //While-loop is used for validation if the input is an empty string or less than zero.
+    while ( monthlyEarnings[i] === "" || monthlyEarnings[i] < 0 || isNaN( monthlyEarnings[i] ) ){  //While-loop is used for validation if the input is an empty string or less than zero.
 
         monthlyEarnings[i] = prompt( "An invalid amount has been entered for month " + monthCount + ", please try again.\n\n\nHow much did you make in month " + monthCount + " of your time freelancing?" );  //If the the input is invalid, the user gets prompted again to enter the monthly earnings for specified month by the month counter. The variable array index gets defined as the users input.
 

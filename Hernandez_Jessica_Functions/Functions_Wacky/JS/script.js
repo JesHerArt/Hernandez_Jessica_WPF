@@ -23,7 +23,7 @@ for ( i = 0; i < numbers.length; i++ ){  //For loop will iterate through the num
 
     numbers[i] = prompt("Number " + numCount + " out of 5\n\nEnter a number from 1 through 100.");  //Prompts the user to enter a number between 1 and 100. The variable gets declared and defined as the users input.
 
-    while ( numbers[i] == "" || numbers[i] < 1 || numbers[i] > 100 ){  //While-loop is used for validation if the input is an empty string or less than zero.
+    while ( numbers[i] === "" || numbers[i] < 1 || numbers[i] > 100 || isNaN( numbers[i] ) ){  //While-loop is used for validation if the input is an empty string or less than zero.
 
         numbers[i] = prompt( "An invalid number has been input, please try again.\n\n\nNumber " + numCount + " out of 5\n\nEnter a number from 1 through 100." );  //If the the input is invalid, the user gets prompted again to enter the a number between 1 and 100. The variable array index gets defined as the users input.
 
@@ -76,7 +76,7 @@ function getStandardDeviation(array){  //Function gets declared to find the stan
 
     }
 
-    var stanDev = Math.round ( (Math.sqrt( total / array.length )) * 100 ) / 100;  //Standard deviation gets calculated by getting the square root of the total divided by the array length. The result gets rounded to two decimal places.
+    var stanDev = Math.round ( ( Math.sqrt( total / array.length )) * 100 ) / 100;  //Standard deviation gets calculated by getting the square root of the total divided by the array length. The result gets rounded to two decimal places.
 
     return stanDev;  //Return the standard deviation result.
 
